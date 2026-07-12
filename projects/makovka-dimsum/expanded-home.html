@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Makovka Dimsum - Semua Berhak Makan Dimsum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "primary": "#bb1200",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "inverse-primary": "#ffb4a7",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary-container": "#646464",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed": "#ffdcbc",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e2e2e2",
+                        "on-primary-container": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#926f69",
+                        "primary-fixed-dim": "#ffb4a7",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdad4",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "secondary": "#5e5e5e",
+                        "on-primary-fixed-variant": "#910b00",
+                        "on-tertiary-fixed": "#2c1700",
+                        "surface-tint": "#bd1200",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#875000",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline-variant": "#e7bdb6",
+                        "on-primary-fixed": "#400200",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#e32b14",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#aa6600",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#5d3f3a",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed-dim": "#ffb86b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Anybody"],
+                        "label-bold": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface text-primary font-label-bold text-label-bold fixed top-0 w-full z-50 border-b-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-black text-primary uppercase tracking-tighter" href="#">
+                Makovka Dimsum
+            </a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#menu">Menu</a>
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#outlets">Outlets</a>
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#social">Social Media</a>
+</div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-2 border-b-2 border-on-background active:border-b-0 active:translate-y-[2px] transition-all hidden md:block">
+                Order Now
+            </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-[100px] md:pt-[120px] pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="order-2 md:order-1 flex flex-col items-start gap-stack-md z-10">
+<img alt="Makovka Dimsum Logo" class="h-24 md:h-32 object-contain mb-stack-sm drop-shadow-[2px_2px_0_rgba(0,0,0,1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBua8dPedjNLIm5le6O3l7ufyRe5MZJpa4SWQlKfzcu1DWtNCOgjvXM7UtxCFkWcEvdbBJAz_AEqzjJyWJLulbEsNQdOsZISAyOodlBByga9RHid9E_ZAfRwfTmHsEtC0RWMjQfUrF6og2-CZe382XY1eXZpOnpNpBsTgcZPFOpytwTV-_VFuA1Ktzw52xeQKMwyk3dqi59ZGN1PZSo4q7k77UBGDfPniQpxHq-pwCqg-WSO7Jz-rdtw9sXpLKELr0">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg uppercase text-on-background">
+                    Semua Berhak <span class="text-primary">Makan Dimsum</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md border-l-4 border-primary pl-4">
+                    Dimsum terlengkap di Kota Cilegon dengan berbagai varian rasa yang nagih!
+                </p>
+<div class="flex gap-4 mt-stack-sm">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 border-2 border-on-background border-b-[4px] active:border-b-2 active:translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-[2px] hover:translate-x-[2px]">
+                        Lihat Menu
+                    </button>
+</div>
+</div>
+<div class="order-1 md:order-2 relative group">
+<div class="absolute inset-0 bg-primary translate-x-4 translate-y-4 border-2 border-on-background"></div>
+<div class="relative border-2 border-on-background overflow-hidden bg-surface">
+<img alt="Delicious Dimsum Assortment" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB5-J8F6CU53Erl84oarfQIwCihvqVMgY3WHrjlC8f-VDi-4egOhoCAWgGu7dHba_SMsTq_fyP5lB0Cz0bzajxkIP1qzxIR_dxIOYAwJxP4n11g2jwZLgy5uEtXPCDIrTh_pwjIYepCUnqK-9LM8dcp-dpBpS_cQoF0D9VN3n2DyKolujBPNLXDtnjWCTsxYyx7T5xKLi_lPQx7M8lS9MbZMCzMWXbshJ4AbqQ3niy4YPInJ1HOCRopOdrxgqDADY">
+</div>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 bg-surface-bright border-2 border-on-background px-4 py-2 flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-5deg] z-20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-label-bold text-on-background uppercase">Best in Cilegon</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="menu"><h2 class="font-headline-md text-headline-md uppercase text-on-background mb-stack-md border-b-4 border-primary inline-block">Varian Menu Terpopuler</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-6"><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Creamy Truffle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9nV0Tt8Cr0omN2jIhjJ8XkH2lISFXpzxGZKxkdmvDuIeZ35A6Gbi7Pomi7HXwsHDexHKDT-JD90f3Fh01Arq3FLlRLJWIdAd4XRqR-ltrsqocugYfZrWydJoeyNejwReDmKxkvCagwklmiNclUCisP0mS8hHxAf0tQjwWHyhBbWo0oncoJeE1gRAFioqh18T4S4gkEw-RhCpV6Exp05KAIefUn9jBBhjr5xIDwTDE4tX3HIvNKrTPF3pCbTw3Oic"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Creamy Truffle</h3><p class="text-body-md text-secondary mb-2">Aroma truffle mewah.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Mentai" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3YwAqmyZfzx4rWcVeaOJvqsyiYi6MKEe2RMZ4K_hnNSw8jptWiqrAWNHA2E73pKqsGLpvHB9H7FaKm07JWuGt-6hR97X2QlrIe1is-binOEFm7grDM9_g-uV6uSEn4_yNoGrRe4oS9UnjI9w8wLyXTN9x_8cZLoC_1upuxYxssWLJ5hxH8SSoBjlSdQFp3MQCGUeKb43P_YdbAd2hpbxhLcVDmzsOXyfoVSAyyGB8KyY2_qXVblpRjrnfqN2k1w"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Mentai</h3><p class="text-body-md text-secondary mb-2">Saus mentai creamy.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Cheese Mayo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQMbU9zDmNoi1VtD8eqRPybF8M__HAFUeqwVHSH9-z41cIU-e4dDC2XKWpazxfTgfjT4B7WAc1tUV8XMrQcb3jrw7zDTp32ASle9bTDmIHi4Bcs8SSpLj4Fe_cchxwaG4uhzV3rmqMktEJ0eGF-eKMeKmYe7KRk39-6GSOr1JrKeUiwzzRFnqP5gi7zckg42s3_sqY4Gqm_F4j_uGWjTbnGfpi7Vl0WbFVqKuOYewX_4_xiionsPwuKkIMbPnc2A8"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Cheese Mayo</h3><p class="text-body-md text-secondary mb-2">Keju lumer melimpah.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Garlic Mayo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQEKEPyer933W3V0ZiZhJHxb8lWHq87f16QD7gCAECALXv7vyvWbWuYT9KlOZmQymGgmSwoeyEudx6nabGub85Ni1h1Xcjq1Qbe7JrzQIJtfz24xmrtFrf_rTeRiqaTpK7MxiZqUJEpQ22pvRuUE-n8iN086oWTogBYLmdULAKukjVYibB5IuWooe4rC8M5mmQl0qAGo5PJYaNs5c9cewlvu6YHJC3iteddXBnekH9PFtZWhsM5qjhzv5wRaojZk"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Garlic Mayo</h3><p class="text-body-md text-secondary mb-2">Gurih bawang putih.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Nashville Fire" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt0iwNKB8WnhjqadyR5yCdxvmCLSWLrFu2FQLBuduOP1S8240652s4vIycx-y2SR_u0W8lerumVQginrohq7iqN8O58iyOfNc2JXGfc0W-40uXgvT8t5iY3dElM89zUJBdW6uC201zXVMRJn2UnGUMiWH8bJIEhnpLppAryPyK_19XZk1BDXbayn-T5wfdtpgJOPitz6jnrT3p88wQsccZb3LDdoU9oQHAmNOQeZU4un7CZdCObvauR8MLCBnNxTM"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Nashville Fire</h3><p class="text-body-md text-secondary mb-2">Pedas nendang!</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Creamy Bolognese" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz66d6iCOclSQQdcSTvpsyE4AaZRVltcxhsEUh_qxeOXTMZ82DF22OF3NHYjrJI7fFlbxgF_QXaxhsKX5gynhAd3cQbtdtKrvkIAIN-aB0-GmI5mru9LHfAAWuCanhcFNjE-VkiVfL9mRrZQcyRq6BmrlbJI0VobefF4BuRru3XyS9fpHetdhIFTw4iJTCJgeNrzX-I9-j9mrMcb1IjrmZnX3BqU5zAW99xAqNsunWU77HFQawPnj5B7cz8_cqXxM"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Creamy Bolognese</h3><p class="text-body-md text-secondary mb-2">Rasa Italia otentik.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Hot Mentai" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXMl8KsWPzjt1y79V5WK0fZAQlbmc4_Zd5-wNih5t0QNa1hnyCfdNzMlLAIFkoFBlsP21jnLFqCbO7HZ8H17lD95FeiWXZti4f2VA65D_1gNiPeBKkziucAMIT1vdYiJn4l1Cqa4d6XR6mQ8E0612LrNhL_2k7-lpuUuNqEvuKyq9_AIiSmhN1SytBPZ_vb09fAJ2R_1cQEmi_UNr3Uvhtfh-5tVLW1MO3vdeBVLlMNCOpxXy0nkxG3t7sf-A0Jjg"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Hot Mentai</h3><p class="text-body-md text-secondary mb-2">Mentai pedas spesial.</p><span class="font-black text-primary">Rp 15.000</span></div></div><div class="group border-2 border-on-background bg-surface shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden"><div class="aspect-square overflow-hidden border-b-2 border-on-background"><img alt="Nashville Fire Cheese" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgE8YDv0Rf2sn6RiWe9bIViLYzj8q742sa7laf5Ar5d3qixINIGWdXbcOFKwgvNmsawd5tnHHUmdHY_juo4zcBrOvm6obdtx2iBxHyNJ9S_u3HZ9FC70bxApRq8H5vRCIQvMOIxuPbWmapHeRoAmJT8a0R3DCr6sfgqZ8zTqpIwfEHuMwbqgAkrv8uWRnNvb17RzhyEy89CDWsIOfwOeqs03tlBWCkPSxI09kEwUAMTulnCTiRODCD2q4AWku0x4k"></div><div class="p-4"><h3 class="font-label-bold text-label-bold uppercase mb-1">Nashville Fire Cheese</h3><p class="text-body-md text-secondary mb-2">Pedas keju sempurna.</p><span class="font-black text-primary">Rp 15.000</span></div></div></div></section><section class="py-stack-lg bg-surface-container-low border-y-4 border-on-background" id="outlets"><div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"><h2 class="font-headline-md text-headline-md uppercase text-on-background mb-stack-md">Temukan Kami</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter"><div class="bg-surface border-2 border-on-background p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"><h3 class="font-headline-md text-primary mb-2">Alun-alun Cilegon</h3><p class="text-body-md mb-4">Kedai No. 11, Pusat Kota Cilegon</p><button class="w-full bg-primary text-on-primary py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Order via GoFood</button><button class="w-full mt-2 bg-surface text-on-background py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary">chat</span> Pesan via WhatsApp</button></div><div class="bg-surface border-2 border-on-background p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"><h3 class="font-headline-md text-primary mb-2">Bunderan 1</h3><p class="text-body-md mb-4">Area Strategis Bunderan 1</p><button class="w-full bg-primary text-on-primary py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Order via GoFood</button><button class="w-full mt-2 bg-surface text-on-background py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary">chat</span> Pesan via WhatsApp</button></div><div class="bg-surface border-2 border-on-background p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"><h3 class="font-headline-md text-primary mb-2">GP 3</h3><p class="text-body-md mb-4">Cabang GP 3 Cilegon</p><button class="w-full bg-primary text-on-primary py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Order via GoFood</button><button class="w-full mt-2 bg-surface text-on-background py-2 font-label-bold border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-surface-container-high transition-all flex items-center justify-center gap-2"><span class="material-symbols-outlined text-primary">chat</span> Pesan via WhatsApp</button></div></div></div></section><section class="py-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"><h2 class="font-headline-md text-headline-md uppercase text-on-background mb-stack-md text-center">Kata Makovka Lovers</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter"><div class="relative bg-primary text-on-primary p-6 border-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg]"><span class="material-symbols-outlined absolute -top-4 -left-4 bg-surface text-primary border-2 border-on-background p-2 rounded-full">format_quote</span><p class="font-body-lg italic">"Dimsum terenak di Cilegon! Gak ada lawan."</p></div><div class="relative bg-surface text-on-background p-6 border-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[1deg]"><span class="material-symbols-outlined absolute -top-4 -left-4 bg-primary text-on-primary border-2 border-on-background p-2 rounded-full">format_quote</span><p class="font-body-lg italic">"Varian mentainya nagih banget, sausnya melimpah!"</p></div><div class="relative bg-primary text-on-primary p-6 border-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg]"><span class="material-symbols-outlined absolute -top-4 -left-4 bg-surface text-primary border-2 border-on-background p-2 rounded-full">format_quote</span><p class="font-body-lg italic">"Harga kaki lima, rasa bintang lima. Mantap!"</p></div></div></section><footer class="w-full mt-stack-lg border-t-4 border-primary bg-on-background dark:bg-surface-container-lowest text-primary font-body-md text-body-md">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div>
+<span class="font-headline-lg text-headline-lg font-extrabold text-surface block mb-4">Makovka</span>
+<p class="text-surface-variant opacity-90 hover:opacity-100 transition-opacity">© 2024 Makovka Dimsum. Semua berhak makan dimsum.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">TikTok</a>
+</div>
+<div class="flex flex-col gap-2"><span class="font-label-bold text-surface uppercase mb-2 block">Delivery Partners</span><div class="flex flex-col gap-4"><a class="flex items-center gap-2 bg-surface px-4 py-2 border-2 border-on-background text-on-background font-label-bold hover:translate-x-[2px] hover:translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" href="#"><span class="material-symbols-outlined text-primary">delivery_dining</span> GoFood</a><a class="flex items-center gap-2 bg-surface px-4 py-2 border-2 border-on-background text-on-background font-label-bold hover:translate-x-[2px] hover:translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" href="#"><span class="material-symbols-outlined text-primary">electric_moped</span> GrabFood</a></div></div>
+</div>
+</footer>
+
+
+<a href="#" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full border-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-2px] transition-all flex items-center justify-center group"><span class="material-symbols-outlined text-3xl">chat</span><span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 font-label-bold uppercase whitespace-nowrap">WhatsApp Kami</span></a></body></html>

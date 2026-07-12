@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Makovka Dimsum - Semua Berhak Makan Dimsum</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "primary": "#bb1200",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "inverse-primary": "#ffb4a7",
+                        "on-background": "#1a1c1c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary-container": "#646464",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed": "#ffdcbc",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e2e2e2",
+                        "on-primary-container": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#926f69",
+                        "primary-fixed-dim": "#ffb4a7",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdad4",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "secondary": "#5e5e5e",
+                        "on-primary-fixed-variant": "#910b00",
+                        "on-tertiary-fixed": "#2c1700",
+                        "surface-tint": "#bd1200",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#875000",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1a1c1c",
+                        "inverse-on-surface": "#f1f1f1",
+                        "outline-variant": "#e7bdb6",
+                        "on-primary-fixed": "#400200",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#e32b14",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#aa6600",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#5d3f3a",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "tertiary-fixed-dim": "#ffb86b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-lg": "48px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Anybody"],
+                        "label-bold": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface text-primary font-label-bold text-label-bold fixed top-0 w-full z-50 border-b-2 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-black text-primary uppercase tracking-tighter" href="#">
+                Makovka Dimsum
+            </a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#menu">Menu</a>
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#outlets">Outlets</a>
+<a class="text-secondary hover:text-primary transition-colors hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT" href="#social">Social Media</a>
+</div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-2 border-b-2 border-on-background active:border-b-0 active:translate-y-[2px] transition-all hidden md:block">
+                Order Now
+            </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-[100px] md:pt-[120px] pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="order-2 md:order-1 flex flex-col items-start gap-stack-md z-10">
+<img alt="Makovka Dimsum Logo" class="h-24 md:h-32 object-contain mb-stack-sm drop-shadow-[2px_2px_0_rgba(0,0,0,1)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBua8dPedjNLIm5le6O3l7ufyRe5MZJpa4SWQlKfzcu1DWtNCOgjvXM7UtxCFkWcEvdbBJAz_AEqzjJyWJLulbEsNQdOsZISAyOodlBByga9RHid9E_ZAfRwfTmHsEtC0RWMjQfUrF6og2-CZe382XY1eXZpOnpNpBsTgcZPFOpytwTV-_VFuA1Ktzw52xeQKMwyk3dqi59ZGN1PZSo4q7k77UBGDfPniQpxHq-pwCqg-WSO7Jz-rdtw9sXpLKELr0"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg uppercase text-on-background">
+                    Semua Berhak <span class="text-primary">Makan Dimsum</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md border-l-4 border-primary pl-4">
+                    Dimsum terlengkap di Kota Cilegon dengan berbagai varian rasa yang nagih!
+                </p>
+<div class="flex gap-4 mt-stack-sm">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 border-2 border-on-background border-b-[4px] active:border-b-2 active:translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-y-[2px] hover:translate-x-[2px]">
+                        Lihat Menu
+                    </button>
+</div>
+</div>
+<div class="order-1 md:order-2 relative group">
+<div class="absolute inset-0 bg-primary translate-x-4 translate-y-4 border-2 border-on-background"></div>
+<div class="relative border-2 border-on-background overflow-hidden bg-surface">
+<img alt="Delicious Dimsum Assortment" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB5-J8F6CU53Erl84oarfQIwCihvqVMgY3WHrjlC8f-VDi-4egOhoCAWgGu7dHba_SMsTq_fyP5lB0Cz0bzajxkIP1qzxIR_dxIOYAwJxP4n11g2jwZLgy5uEtXPCDIrTh_pwjIYepCUnqK-9LM8dcp-dpBpS_cQoF0D9VN3n2DyKolujBPNLXDtnjWCTsxYyx7T5xKLi_lPQx7M8lS9MbZMCzMWXbshJ4AbqQ3niy4YPInJ1HOCRopOdrxgqDADY"/>
+</div>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 bg-surface-bright border-2 border-on-background px-4 py-2 flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rotate-[-5deg] z-20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-bold text-label-bold text-on-background uppercase">Best in Cilegon</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg border-t-4 border-primary bg-on-background dark:bg-surface-container-lowest text-primary font-body-md text-body-md">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div>
+<span class="font-headline-lg text-headline-lg font-extrabold text-surface block mb-4">Makovka</span>
+<p class="text-surface-variant opacity-90 hover:opacity-100 transition-opacity">© 2024 Makovka Dimsum. Semua berhak makan dimsum.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">TikTok</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">GoFood</a>
+<a class="text-surface-variant hover:text-primary-fixed-dim transition-colors opacity-90 hover:opacity-100" href="#">GrabFood</a>
+</div>
+</div>
+</footer>
+</body></html>
