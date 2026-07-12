@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FestHub | Discover Events That Move You</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#2d3449",
+                    "primary": "#d0bcff",
+                    "primary-fixed-dim": "#d0bcff",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-fixed-variant": "#004c69",
+                    "on-surface-variant": "#cbc3d7",
+                    "tertiary": "#7bd0ff",
+                    "outline-variant": "#494454",
+                    "secondary-fixed": "#ffd9e4",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "background": "#0b1326",
+                    "surface-container-low": "#131b2e",
+                    "outline": "#958ea0",
+                    "surface-container-lowest": "#060e20",
+                    "inverse-on-surface": "#283044",
+                    "on-primary-fixed": "#23005c",
+                    "inverse-surface": "#dae2fd",
+                    "on-tertiary-fixed": "#001e2c",
+                    "error-container": "#93000a",
+                    "surface-dim": "#0b1326",
+                    "secondary-container": "#aa0266",
+                    "on-primary": "#3c0091",
+                    "inverse-primary": "#6d3bd7",
+                    "on-primary-container": "#340080",
+                    "on-error": "#690005",
+                    "tertiary-container": "#009bd1",
+                    "surface-variant": "#2d3449",
+                    "primary-container": "#a078ff",
+                    "on-secondary-fixed": "#3e0022",
+                    "secondary": "#ffb0cd",
+                    "surface": "#0b1326",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "on-error-container": "#ffdad6",
+                    "surface-tint": "#d0bcff",
+                    "on-primary-fixed-variant": "#5516be",
+                    "tertiary-fixed": "#c4e7ff",
+                    "on-secondary-container": "#ffbad3",
+                    "on-secondary": "#640039",
+                    "surface-container-high": "#222a3d",
+                    "on-tertiary": "#00354a",
+                    "surface-bright": "#31394d",
+                    "on-tertiary-container": "#002d40",
+                    "primary-fixed": "#e9ddff",
+                    "on-surface": "#dae2fd",
+                    "error": "#ffb4ab",
+                    "surface-container": "#171f33",
+                    "tertiary-fixed-dim": "#7bd0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "xs": "4px",
+                    "2xl": "64px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Outfit"],
+                    "caption": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Outfit"],
+                    "body-md": ["Inter"],
+                    "display-lg-mobile": ["Outfit"],
+                    "display-lg": ["Outfit"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            overflow-x: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(208, 188, 255, 0.2);
+        }
+        .glow-pink {
+            box-shadow: 0 0 15px rgba(255, 176, 205, 0.3);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #6d3bd7 0%, #aa0266 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="dark font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-md dark:bg-surface/60 border-b border-white/10">
+<div class="flex items-center justify-between px-md py-sm w-full max-w-full h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-headline-md text-headline-md">festival</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">FestHub</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/5 transition-colors active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative h-[795px] flex items-center justify-center overflow-hidden">
+<!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create organic movement using time
+    float motion = sin(u_time * 0.5) * 0.1;
+    
+    // Base colors from FestHub palette
+    vec3 primary = vec3(0.545, 0.361, 0.965); // #8b5cf6 Electric Purple
+    vec3 accent = vec3(0.925, 0.282, 0.6);   // #ec4899 Hot Pink
+    vec3 background = vec3(0.059, 0.09, 0.165); // #0f172a Dark Navy
+    
+    // Dynamic gradient pattern
+    float pattern = sin(uv.x * 3.0 + u_time) * cos(uv.y * 3.0 + u_time * 0.8);
+    float glow = smoothstep(0.1, 0.7, pattern + motion);
+    
+    // Layered color mixing
+    vec3 color = mix(background, primary, glow * 0.6);
+    color = mix(color, accent, smoothstep(0.4, 0.9, pattern - motion) * 0.4);
+    
+    // Add subtle vignetting
+    float vignette = 1.0 - length(uv - 0.5) * 0.8;
+    color *= vignette;
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+<div class="relative z-10 px-margin-mobile text-center">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4 animate-fade-up">Discover Events <br/><span class="text-secondary italic">That Move You</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto mb-8 opacity-90">Your gateway to high-energy concerts, creative workshops, and immersive festivals.</p>
+<!-- Glassmorphic Search Bar -->
+<div class="glass p-lg rounded-2xl w-full max-w-xl mx-auto flex flex-col gap-4 shadow-2xl">
+<div class="flex flex-col gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline-variant" placeholder="Where are you looking?" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">calendar_month</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline-variant" placeholder="When?" type="text"/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">category</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline-variant" placeholder="Category" type="text"/>
+</div>
+</div>
+</div>
+<button class="gradient-primary text-white font-bold py-4 rounded-xl active:scale-95 transition-transform glow-pink">Search Experiences</button>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="py-xl px-margin-mobile reveal">
+<div class="flex overflow-x-auto gap-6 no-scrollbar pb-4">
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass glow-purple flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">music_note</span>
+</div>
+<span class="font-label-md text-label-md">Music</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">memory</span>
+</div>
+<span class="font-label-md text-label-md">Tech</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">palette</span>
+</div>
+<span class="font-label-md text-label-md">Art</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<span class="font-label-md text-label-md">Food</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">sports_kabaddi</span>
+</div>
+<span class="font-label-md text-label-md">Sports</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer shrink-0">
+<div class="w-16 h-16 rounded-full glass flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<span class="font-label-md text-label-md">Workshop</span>
+</div>
+</div>
+</section>
+<!-- Horizontal Calendar -->
+<section class="py-lg px-margin-mobile reveal">
+<h3 class="font-headline-md text-headline-md mb-6">Experience Calendar</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<!-- Simple dynamic calendar generation placeholder -->
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl border border-white/5 text-on-surface-variant">
+<span class="text-[10px] font-bold uppercase opacity-60">Mon</span>
+<span class="text-xl font-bold">12</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl bg-primary/20 border border-primary/20 text-primary">
+<span class="text-[10px] font-bold uppercase">Tue</span>
+<span class="text-xl font-bold">13</span>
+<div class="w-1 h-1 rounded-full bg-primary mt-1"></div>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl border border-white/5 text-on-surface-variant">
+<span class="text-[10px] font-bold uppercase opacity-60">Wed</span>
+<span class="text-xl font-bold">14</span>
+<div class="w-1 h-1 rounded-full bg-secondary mt-1"></div>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl border border-white/5 text-on-surface-variant">
+<span class="text-[10px] font-bold uppercase opacity-60">Thu</span>
+<span class="text-xl font-bold">15</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl border border-white/5 text-on-surface-variant">
+<span class="text-[10px] font-bold uppercase opacity-60">Fri</span>
+<span class="text-xl font-bold">16</span>
+<div class="w-1 h-1 rounded-full bg-primary mt-1"></div>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[56px] h-20 rounded-2xl border border-white/5 text-on-surface-variant">
+<span class="text-[10px] font-bold uppercase opacity-60">Sat</span>
+<span class="text-xl font-bold">17</span>
+</div>
+</div>
+</section>
+<!-- Featured Events -->
+<section class="py-xl px-margin-mobile reveal">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg">Hottest Picks</h2>
+<a class="text-secondary font-label-md flex items-center" href="#">View All <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Event Card 1 -->
+<div class="glass group rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-energy photograph of a massive outdoor music festival at sunset. Thousands of people are cheering with their hands up, silhouetted against a vibrant purple and orange sky. Multi-colored laser beams cut through a light haze over the stage. The atmosphere is electric, joyful, and immersive with a modern dark cinematic feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7-gOlh2WPz7_nOZHrujlg7O7o0TabrkqQIoIu0ojETkdgXIyF18r_tg7XfppeLfIYOGduAbU6K3DfyJnpq6JCqBVMrhiD461xriU2VNgrTzsjuPv4YbX40_sjnfhB7owqe0OkceWaoH5Y9LDYdsCApWKPobNGyjgomGdKUC8pI-fWmhn5AfhtwIP89e2J9Eyih7TIl-rLdSxM8QrpUHiwK-B7sZwDxKsOI1r_u_LmL-0k8ibDoJ_S')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 glass px-3 py-1 rounded-full">
+<span class="font-label-md text-label-md text-white">Music</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Sonic Horizon 2024</h3>
+<p class="text-on-surface-variant font-label-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Aug 24 • <span class="material-symbols-outlined text-sm ml-2">location_on</span> Echo Park, LA
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xl">$59+</span>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-xl font-bold hover:bg-secondary transition-colors active:scale-95">Get Tickets</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="glass group rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center" data-alt="An ultra-modern art gallery exhibit featuring large-scale digital projection mapping on white walls. Neon blue and magenta light shapes flow across the surfaces. A few trendy visitors are silhouetted, observing the immersive experience. The style is sleek, tech-focused, and high-fidelity with a minimalist high-contrast aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkFO1v9naIu8Dk1GsjGlegGYER7E9RDaC4tUpvsa_a_jRlz79L9OLPJE7bya0-BbpoTRZOX4dvu6OT26FXVNHueeTX37iXN-Ea7Mqs2y-8eLjPgEfRUH0oX60tzrlrpFhibEtTZ8_AmP4Twan9mmlCOi-I_anQDSB9Ym82vC3sHN7ys9rgEViwlwtoBvUjESU-eGTAivcvfC5N9_FUTFcTV3uLvLiah-lEnSS_xEjl_Fp1jAYP_3L_')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 glass px-3 py-1 rounded-full">
+<span class="font-label-md text-label-md text-white">Digital Art</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Neon Brush Nights</h3>
+<p class="text-on-surface-variant font-label-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Sep 02 • <span class="material-symbols-outlined text-sm ml-2">location_on</span> The Glass Box, NYC
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xl">$35+</span>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-xl font-bold hover:bg-secondary transition-colors active:scale-95">Get Tickets</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="glass group rounded-3xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+<div class="relative h-56">
+<div class="w-full h-full bg-cover bg-center" data-alt="A vibrant night market food stall scene with steam rising from sizzling pans. Warm yellow filament bulbs hang overhead, casting a glow on colorful street food. People are gathered in the background, out of focus, creating a lively atmosphere. The color palette features rich oranges, deep reds, and dark shadows for a cozy yet energetic mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeCLiOqD71X8beS5ZpGKBujneeMTnRIYx7wKfWSmSujyETUaO63lhBcfjQlEAVej3R-S8E5pFCHburO7_EhVZrbd73d00SM_w0euP8_zI-B0OGtVA1QTyMwnGXqDTEkPCnasjvlW-RYtXEvp1mQT-bupQhYdFRPlGLrZW9WK21ftbugUudBZpHqWtsYp3FepiGcNz0rILIcRPLmlqPRfa0331dUhj5hnA9RjbLLRABXJJo2tdWwZ86')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-4 left-4 glass px-3 py-1 rounded-full">
+<span class="font-label-md text-label-md text-white">Food</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Street Flavor Fest</h3>
+<p class="text-on-surface-variant font-label-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span> Oct 12 • <span class="material-symbols-outlined text-sm ml-2">location_on</span> Market Square, Austin
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold text-xl">Free</span>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded-xl font-bold hover:bg-secondary transition-colors active:scale-95">Get Tickets</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Detail Preview (Expandable Mock) -->
+<section class="py-2xl px-margin-mobile reveal">
+<div class="glass p-8 rounded-[40px] relative overflow-hidden">
+<div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-primary/20 blur-[100px]"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8">
+<div class="w-full md:w-1/3 aspect-square rounded-3xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a DJ performing at a night club. The DJ is silhouetted against a wall of bright LED panels displaying neon geometric patterns. Teal and pink light illuminates the smoke in the air. The mood is high-energy, modern, and focused on electronic music culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA4hOUYGA8sD-_COrJnG-VWHV2eX5iagHSO0-qm7Mh3h7zun0fmHPrAi2PynixnTkcXCXo52TTLSYFehJswQNQ1oqG8VQrdC1YFas4YgtMZJhf-RAtdAorg2Zwr4QC0pj7NpGsWn4V-S8WNYMS1lUvKz0MoqMd8TiWOHYmUPaDNpd2YTBST1YjtZW70v82sNSFWpii7orukJ1H5XN4IGNPBmBum-j9QwUR-V0TE6hVMWUV9PBXkJJK"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full font-label-md text-xs">Featured Spotlight</span>
+</div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4">Neon Nights Festival</h2>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="bg-surface-container-highest px-4 py-1 rounded-full text-on-surface-variant font-label-md">#Techno</span>
+<span class="bg-surface-container-highest px-4 py-1 rounded-full text-on-surface-variant font-label-md">#Immersive</span>
+<span class="bg-surface-container-highest px-4 py-1 rounded-full text-on-surface-variant font-label-md">#Underground</span>
+</div>
+<p class="text-on-surface-variant mb-8 line-clamp-3">Join us for the 5th anniversary of Neon Nights. Experience 12 hours of non-stop beats across three stages with cutting-edge visual installations and world-class sound systems.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div class="glass p-4 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">map</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Venue Map</p>
+<p class="text-sm font-bold">The Hangar 21</p>
+</div>
+</div>
+<div class="glass p-4 rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">confirmation_number</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Tiers Available</p>
+<p class="text-sm font-bold">GA, VIP, Backstage</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 gradient-primary rounded-2xl text-white font-bold glow-pink active:scale-[0.98] transition-transform">Explore Neon Nights</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-2xl px-margin-mobile bg-surface-container-lowest reveal">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg">What the Crowd Says</h2>
+<p class="text-on-surface-variant mt-2">Join thousands of happy festival-goers.</p>
+</div>
+<div class="flex overflow-x-auto gap-6 no-scrollbar snap-x px-4 -mx-4">
+<div class="min-w-[280px] glass p-6 rounded-3xl snap-center">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up headshot of a smiling young woman with colored hair, wearing trendy sunglasses at a music festival. Soft bokeh background with colorful lights. Vibrant, youthful energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2jboOpn_yMK4WtifSdZShsZjOc6Y2kcTyRqCTQ1GBvbEOsB2lt0DNd3vE2YoVFZURpvEx0IP7AYGzK9SvxKjcjtrT1SqtpL7CZcV_d22bAZaEldXOc7Oa576Pf3yHbsLTUgev4PlxePicU8GcOCqKPV-XLoblgpiBxdqTkqUlycbrfDfLh8OvuRkWef9HJOE-KtioJz92SvC-i1mtHxGfU3wxzxrfi85ohXGrKSqsI45q4dE-7Il2"/>
+</div>
+<div>
+<p class="font-bold">Maya J.</p>
+<p class="text-xs text-outline">EDM Enthusiast</p>
+</div>
+</div>
+<p class="italic text-on-surface">"FestHub found me the best techno event in Berlin within seconds. The ticketing was seamless!"</p>
+</div>
+<div class="min-w-[280px] glass p-6 rounded-3xl snap-center">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a creative professional man with a short beard and stylish glasses. Minimalist studio background with soft warm lighting. Clean, modern, high-quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX_Foyb3InRg5h0YJtdUm8DUP_ZD76C31t4H6AT3E3LAAoLcOJwB0D7d8BLEuGt0nfnRZrCzk43kJvuAi6YWjttmR828AnHOh_jfwI6e-cBUxadsWHlTN7hu4DXr9gk8TBFnB5nJFwDLqQ2faslwes0XUBLNCQ0g8qigYyKcsgNF-ROnAnr-8N2tLZjXyAQfsLr9m5Ii2j2fj_ToXzva2FXbuPsy_JzT_nfKKiIkKFhorW35b-cmcT"/>
+</div>
+<div>
+<p class="font-bold">Daniel K.</p>
+<p class="text-xs text-outline">Tech Lead</p>
+</div>
+</div>
+<p class="italic text-on-surface">"The workshop category is amazing. I attended a generative art session that changed my career path."</p>
+</div>
+<div class="min-w-[280px] glass p-6 rounded-3xl snap-center">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Candid shot of a laughing woman wearing a bohemian style hat at an outdoor food festival. Bright sunny lighting, warm tones, festive atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAExWxPiSYzL0uV4peT1BZOB6Btnm76TeleP1h8Fk3v4kX8kdLNR7NNqIP-t-DwuBLPlhBmYAM1ZoSesOiPIP0kjuMOJeQezP44p_-JlrHOLM7rPGTAmgxFywcdOP2NesTkKFJSICoCkTT8zuPfutHDmq35UiXLLqChM0U5LqWT9C75ex4puHmN_Q0ZQdo6c5K3uM_3bwi-jwjVSDq6Dmgt-3Ep1D9Wdi-GRwyFxAWHVcKr6phO5HqH"/>
+</div>
+<div>
+<p class="font-bold">Sarah L.</p>
+<p class="text-xs text-outline">Food Blogger</p>
+</div>
+</div>
+<p class="italic text-on-surface">"Discovered the most authentic food fest in my city. FestHub's curated lists are spot on!"</p>
+</div>
+</div>
+</section>
+<!-- Organizer CTA -->
+<section class="py-2xl px-margin-mobile reveal">
+<div class="relative overflow-hidden rounded-[40px] bg-primary py-16 px-8 text-center text-on-primary">
+<div class="absolute inset-0 opacity-20">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<pattern height="10" id="pattern-grid" patternunits="userSpaceOnUse" width="10">
+<circle cx="5" cy="5" fill="currentColor" r="1"></circle>
+</pattern>
+<rect fill="url(#pattern-grid)" height="100" width="100"></rect>
+</svg>
+</div>
+<div class="relative z-10">
+<h2 class="font-display-lg-mobile text-display-lg-mobile mb-4">Host Your Event</h2>
+<p class="font-body-lg text-body-lg mb-8 max-w-md mx-auto opacity-90">Are you an organizer? Reach thousands of active event-seekers and sell tickets instantly.</p>
+<button class="bg-surface text-primary px-12 py-4 rounded-2xl font-bold text-lg hover:bg-surface-bright transition-all shadow-xl active:scale-95">Get Started Today</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-background dark:bg-surface-dim flex flex-col gap-lg px-md py-2xl w-full">
+<div class="flex flex-col items-center text-center">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-black text-primary mb-2">FestHub</div>
+<p class="text-on-surface-variant max-w-sm mb-8">Empowering discovery through the energy of shared experiences.</p>
+<div class="flex flex-wrap justify-center gap-6 mb-12">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+</div>
+<div class="text-tertiary dark:text-tertiary-fixed font-body-md text-body-md mb-8">
+                © 2024 FestHub. Feel the pulse.
+            </div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full glass flex items-center justify-center text-primary cursor-pointer hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 rounded-full glass flex items-center justify-center text-primary cursor-pointer hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">public</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-low/80 backdrop-blur-xl dark:bg-surface-container-lowest/80 border-t border-white/5 flex justify-around items-center h-20 px-4 pb-4 shadow-[0_-4px_24px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 duration-150 cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-md text-label-md">Tickets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-md text-label-md">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined">person_2</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+<script>
+        // Scroll Reveal logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Micro-interactions
+        document.querySelectorAll('button, a, .cursor-pointer').forEach(el => {
+            el.addEventListener('click', function(e) {
+                // Potential for ripple effect or small scale interaction if not handled by CSS
+            });
+        });
+    </script>
+</body></html>

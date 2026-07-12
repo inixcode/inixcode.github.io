@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Digital | Premium Digital Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8e8",
+                      "outline-variant": "#c7c5ce",
+                      "error": "#ba1a1a",
+                      "tertiary": "#100900",
+                      "secondary": "#00687b",
+                      "on-surface": "#1a1c1c",
+                      "secondary-fixed-dim": "#00d9ff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#46464d",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#aeecff",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#004e5d",
+                      "inverse-on-surface": "#f0f1f1",
+                      "tertiary-fixed": "#fbdfac",
+                      "primary-fixed-dim": "#c0c4e8",
+                      "surface-container": "#eeeeee",
+                      "surface-dim": "#dadada",
+                      "on-primary-container": "#8286a7",
+                      "outline": "#77767e",
+                      "error-container": "#ffdad6",
+                      "surface": "#f9f9f9",
+                      "primary-fixed": "#dee1ff",
+                      "tertiary-container": "#2d1f00",
+                      "surface-bright": "#f9f9f9",
+                      "secondary-container": "#00d9ff",
+                      "primary-container": "#1a1f3a",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed": "#001f26",
+                      "on-background": "#1a1c1c",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#9c865a",
+                      "on-primary-fixed-variant": "#404562",
+                      "surface-tint": "#585d7b",
+                      "surface-container-low": "#f3f3f4",
+                      "background": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "inverse-surface": "#2f3131",
+                      "inverse-primary": "#c0c4e8",
+                      "primary": "#030722",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#56441e",
+                      "on-secondary-container": "#005b6c",
+                      "on-primary-fixed": "#151a34",
+                      "on-tertiary-fixed": "#261a00",
+                      "tertiary-fixed-dim": "#ddc392",
+                      "surface-container-highest": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "margin-desktop": "48px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "display-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(26, 31, 58, 0.08);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="Nexus Digital Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGREQ_AOsyvPs-K8nU7d9PZo5SNUUXTyPZwFSYFSvSCT8BTIEgDKXPC6HwpWpex5Fm0JkudUFHBNGqmEiBDBdt28yhierkEhWMcvSwll6AIAiB3yAfNF7od__VgceW-x1rl9vs9Efx4JKZRwH-mqskMu8j-t0u4yb99-2UgMQ0I7vkqN89opG-sJTZVE7u-WFUzTPp2NBuR62ASHUjejwRi5ZTHZ4E1_D0MPr0IDGQnwQStm8AEXTD"/>
+<span class="font-display-lg text-headline-md font-extrabold text-primary tracking-tighter">NEXUS DIGITAL</span>
+</div>
+<button class="material-symbols-outlined text-primary text-3xl">menu</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-16 px-margin-mobile flex flex-col items-center text-center overflow-hidden">
+<div class="max-w-xl mx-auto z-10">
+<span class="inline-block py-1 px-4 rounded-full bg-secondary-container/10 text-secondary-container text-label-md font-label-md mb-6 border border-secondary-container/20">
+                ENGINEERING THE FUTURE
+            </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-6">
+                We Build Digital <span class="text-secondary-container">Experiences</span> That Matter
+            </h1>
+<p class="text-body-lg text-on-surface-variant mb-10 px-4">
+                From high-performance web engineering to award-winning UI design. We turn complex problems into elegant solutions.
+            </p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary text-on-primary py-5 px-8 rounded-lg font-label-md text-label-md shadow-lg active:scale-95 transition-all">
+                    Start Your Project
+                </button>
+</div>
+</div>
+<!-- Hero Illustration -->
+<div class="mt-12 w-full max-w-[500px] mx-auto reveal">
+<img alt="Nexus Hero Illustration" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgvRoxFWbbgZl0_pLlayDWLziSybnYe8Q9h4UUfYe6bPOVu_BAWvuLhORYuIecBC2lfJOXS3d10E0eAqdk0xHILp_KpEJJNrDuuNHg7u6Z_enbzYGBM_TnqKq8z4zRwtbRJK-Y-nllwH-xMX9A-qY2cTHhasJEpMSi9R_eLNKYlupdmCCmcYopqH4M69QQCPsUKb07uVjdg4pna8BjkYGCdEYWJkd9c_MZaNTfmdHJ20cDYDSP1TJC"/>
+</div>
+<!-- Background Accent -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary-container/10 rounded-full blur-3xl"></div>
+</section>
+<!-- Services Section -->
+<section class="py-20 px-margin-mobile bg-surface-container-low">
+<div class="mb-12 text-center reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Services</h2>
+<div class="h-1 w-12 bg-secondary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 gap-6 reveal">
+<!-- Web Dev -->
+<div class="glass-card ambient-shadow p-8 rounded-xl border-l-4 border-primary">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed-dim mb-6">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Web Development</h3>
+<p class="text-body-md text-on-surface-variant">
+                    Scalable, high-performance web applications built with the latest frameworks like React and Next.js.
+                </p>
+</div>
+<!-- Mobile Apps -->
+<div class="glass-card ambient-shadow p-8 rounded-xl border-l-4 border-secondary-container">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-on-secondary-container mb-6">
+<span class="material-symbols-outlined text-3xl">phone_iphone</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Mobile Apps</h3>
+<p class="text-body-md text-on-surface-variant">
+                    Native-quality cross-platform mobile apps built with Flutter for seamless iOS and Android deployment.
+                </p>
+</div>
+<!-- UI/UX -->
+<div class="glass-card ambient-shadow p-8 rounded-xl border-l-4 border-primary-container">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">palette</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">UI/UX Design</h3>
+<p class="text-body-md text-on-surface-variant">
+                    Human-centric design systems that balance aesthetic beauty with functional precision and accessibility.
+                </p>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 bg-primary text-on-primary text-center px-margin-mobile overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary-container to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-12">Why Choose Us</h2>
+<div class="grid grid-cols-1 gap-12">
+<div class="reveal">
+<div class="text-5xl font-black text-secondary-fixed-dim mb-2">50+</div>
+<div class="text-body-lg text-on-primary-fixed-variant">Projects Completed</div>
+</div>
+<div class="reveal" style="transition-delay: 100ms">
+<div class="text-5xl font-black text-secondary-fixed-dim mb-2">30+</div>
+<div class="text-body-lg text-on-primary-fixed-variant">Happy Clients</div>
+</div>
+<div class="reveal" style="transition-delay: 200ms">
+<div class="text-5xl font-black text-secondary-fixed-dim mb-2">5+</div>
+<div class="text-body-lg text-on-primary-fixed-variant">Years Experience</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-20 px-margin-mobile">
+<div class="mb-12 flex justify-between items-end reveal">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Portfolio</h2>
+<p class="text-on-surface-variant mt-2">Latest digital masterpieces.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl">arrow_outward</span>
+</div>
+<div class="space-y-12">
+<!-- Project 1 -->
+<div class="group reveal">
+<div class="relative rounded-xl overflow-hidden ambient-shadow mb-6 aspect-video">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, minimalist UI design for a high-end financial dashboard app, displayed on a sleek laptop screen. The interface features elegant data visualizations, thin typography, and a sophisticated white and deep navy color scheme with electric cyan accents. Soft studio lighting and a tech-forward aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBbFZuBWIl77vsyJe11aoG33L6wgv8s22Uk2ZD08eHnVKwjSaIc26J8wPJpt5Px3qD-B45BB4VjfPH2JfdMldu6BCyLbALc2F9wnCH25WqOvZp_QIKbRmnmfOwMspLohYakO3ha5r3gZ9Zfhy_utbbqxQbJkMt0jyNV54_Yqy518dK-8lFgY0jo7-mRJyh2F-Hv8dW1SlNEclbiiBd1Eo4SWgwwS4F3L_3Wc0hgj6pC_b_j0r1c2gX')"></div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">FinTech X</h3>
+<p class="text-label-md text-on-surface-variant">Modern Banking UI</p>
+</div>
+<button class="text-secondary-container font-label-md text-label-md flex items-center gap-1">
+                        View Case Study <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group reveal">
+<div class="relative rounded-xl overflow-hidden ambient-shadow mb-6 aspect-video">
+<div class="w-full h-full bg-cover bg-center" data-alt="A vibrant mobile app screen for a fitness tracking application, shown on a high-end smartphone with a bezel-less display. The app uses bold electric cyan typography and dark mode navy backgrounds. The design is energetic, featuring progress rings and activity charts. Professional 3D rendering style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzKtr9cPNwmluBlJH_fL4iCQwrKvT7Lyyg8Akg4hNueq3MUS6rQw9WE4xiWoVFMwCNPgMCwV89IqsebLCQfsJvRFcmtKUaWnC9lsm-IOKiFNn-7NABiVgZu45EPzarozcxhgWzNou06Oy3Zv95q7TvG5qSf1JcpBZaoAYwWXlKR_IGLQpqxwO4LuNTvvZkfI4EFRUgnvMB8ZGnii8mWoqZi_eEQm1xQhZN5l6cURWwMGhMN9IwrYLO')"></div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Vigor App</h3>
+<p class="text-label-md text-on-surface-variant">Fitness Platform</p>
+</div>
+<button class="text-secondary-container font-label-md text-label-md flex items-center gap-1">
+                        View Case Study <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group reveal">
+<div class="relative rounded-xl overflow-hidden ambient-shadow mb-6 aspect-video">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sophisticated e-commerce website design for a luxury watch brand, presented on a desktop monitor. The UI features high-quality product photography, generous whitespace, and sharp geometric layouts. The palette is a mix of white, light gray, and deep navy accents. The overall feel is premium and modern." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYoOqK1Mui2_7mlkofdD2PcKv_Ph-bahN6OUXXgB_zl8B-0yXRguMxHm1zoXIpFjaxr9lWP6hfD63syvHNTawhgUnJz1d1aduWoM7HCpMZsDjqHm5Rr5lmTg4Pil5sgLJk1VJcdUR8o71PP6HQIXd8eTmBiR4dyg9VJKe3f9VgIuOWzBSbQCoGZa-U6js7aLD4-zM5fPWw4-1hOfYeZ-UmY3H4ppQ8lAdr60_2odhfpDrajPRhbpx7')"></div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">ChronoLux</h3>
+<p class="text-label-md text-on-surface-variant">E-commerce Solution</p>
+</div>
+<button class="text-secondary-container font-label-md text-label-md flex items-center gap-1">
+                        View Case Study <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group reveal">
+<div class="relative rounded-xl overflow-hidden ambient-shadow mb-6 aspect-video">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cutting-edge SaaS platform interface for cloud infrastructure management, displayed as a collage of multiple screens. The design uses complex nodes and connection lines, symbolizing data flow. The color scheme is predominantly deep navy with neon cyan highlights. Tech-forward, engineered, and professional digital art style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAr3Jy6IHzp3co8Kzr8SGGKbfx0WGQuFiydLVqif05xCcMr8KOaIopZMR2lbI5EF78wvylCpL2S3qANXHAhG_vkiXHj8paOUP7fLpkgIXrzIrPbwOBUKTScwWnauuaIoREHQEC3UWRkKEWHYXaINwGAeTgTY2ueYfJQpXQHOjE9Kr3tbqU4W2eSP5WpaXOxT7NEKjoPQviWD2VEumyY3bLFSPXTOP6UiEY0OWqXebeUIkq765jqe7jl')"></div>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">CloudNode</h3>
+<p class="text-label-md text-on-surface-variant">SaaS Infrastructure</p>
+</div>
+<button class="text-secondary-container font-label-md text-label-md flex items-center gap-1">
+                        View Case Study <span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-surface-container-low px-margin-mobile">
+<div class="mb-12 text-center reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Client Love</h2>
+<p class="text-on-surface-variant">What industry leaders say about Nexus.</p>
+</div>
+<div class="space-y-6">
+<div class="bg-surface p-8 rounded-xl ambient-shadow reveal">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female tech CEO in her late 30s with a confident smile. She has a modern business-casual style. The background is a soft-focus office environment with natural lighting. The image has a clean, high-end corporate aesthetic consistent with light-mode digital branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALkXtn0cwR3LX1S79U4-t27Pt1sHZPzyRTLhUAPU8Smu9wM5pAln1-pdN6lquSzmoLJX9ZWY8CSqb7KyNJX1TgTz2dS2KwgUH3-kTWNnIXjajqo6htv5MLf35XTBjzu4nSS3IushuLnwwfaHMXrYB_xtN4vrV_PKEFWf-C99y2EtEYlR3b_STWjld4WGk-oN3yklvDEWYsvdQMzGx2ffzifBhSJBMige_jsTHvd7gHeNFQw_Qikvo0"/>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg font-bold text-primary">Sarah Jenkins</h4>
+<p class="text-label-md text-on-surface-variant">CEO at FinTech X</p>
+</div>
+</div>
+<p class="italic text-body-md text-on-surface-variant">
+                    "Nexus Digital didn't just build our app; they engineered a competitive advantage. Their attention to detail in UI/UX is simply unmatched in the industry."
+                </p>
+</div>
+<div class="bg-surface p-8 rounded-xl ambient-shadow reveal">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a male software engineer in his early 40s. He has a friendly but professional expression, wearing a navy blue polo shirt. The lighting is bright and modern, against a minimalist studio background. The style is crisp, clean, and technologically focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBydz7BJFiARHkYPlaPwmQOLielHpe9zBhJJI_G8Y6wHliELt6_rj_uDRj68ye_wu0SPLlhsvKjiOHbZLcaYScfpDzInRDcfHP7lMyrpkVaPu2yt2cQV5mmscFiMY0NGuWSFSaGyvpyXClLcEz0ix_diHEjgsJzLmr1McHXgVpjvPAKByB7uP4OK9ekb2k3XHwW6tyLob-eOub2Y-QjtsWyiEsWL48yGFIhvmzGCBSL1BgK3PO1zuH5"/>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg font-bold text-primary">Michael Chen</h4>
+<p class="text-label-md text-on-surface-variant">CTO at CloudNode</p>
+</div>
+</div>
+<p class="italic text-body-md text-on-surface-variant">
+                    "The technical prowess of the Nexus team is astounding. They handled our complex infrastructure migrations with zero downtime and perfect execution."
+                </p>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 px-margin-mobile" id="contact">
+<div class="mb-12 reveal">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Get In Touch</h2>
+<p class="text-on-surface-variant">Ready to start your digital transformation?</p>
+</div>
+<div class="space-y-12">
+<!-- Contact Form -->
+<form class="space-y-6 reveal">
+<div>
+<label class="block text-label-md mb-2 text-primary">Your Name</label>
+<input class="w-full p-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-secondary-container transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-label-md mb-2 text-primary">Email Address</label>
+<input class="w-full p-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-secondary-container transition-all" placeholder="john@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-label-md mb-2 text-primary">Message</label>
+<textarea class="w-full p-4 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-secondary-container transition-all" placeholder="Tell us about your project..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-lg font-label-md text-label-md shadow-lg" type="submit">Send Message</button>
+</form>
+<!-- WhatsApp Button -->
+<div class="reveal">
+<a class="flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 rounded-lg font-label-md shadow-md" href="#">
+<span class="material-symbols-outlined">chat</span>
+                    Chat on WhatsApp
+                </a>
+</div>
+<!-- Map Placeholder -->
+<div class="reveal h-64 rounded-xl overflow-hidden ambient-shadow grayscale hover:grayscale-0 transition-all duration-500">
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center relative" data-location="San Francisco, CA" style="">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPUPLo-ZoP05cBeqrDlgHRO6CtP4yXA4rMqgCP3OXW4aBcctRxy9fjDMp9qHSNGhIhwHf3FcwhgRj_HFLsoeT-aRsC-2s2RWiUptNRon0SD0kqzur-r2YXq9kWJWHO5XfFbxPcsoc9jVpgBItyx6-ISS-vMdOyPDDYrdGqQa38rPB0jWf4nR6RNw_sR8BRdNKasrIMrG2VkvZg9Eiz5tutGL9dKybZB1e4Y1a0SqCVP1T5kboIK9YO')"></div>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<p class="font-bold text-primary">Our Studio</p>
+<p class="text-on-surface-variant text-sm">Creative Hub, Suite 400</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary pt-16 pb-8 px-margin-mobile">
+<div class="max-w-container-max mx-auto space-y-12">
+<div class="flex flex-col gap-6">
+<img alt="Nexus Digital Logo" class="h-10 w-auto self-start" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGREQ_AOsyvPs-K8nU7d9PZo5SNUUXTyPZwFSYFSvSCT8BTIEgDKXPC6HwpWpex5Fm0JkudUFHBNGqmEiBDBdt28yhierkEhWMcvSwll6AIAiB3yAfNF7od__VgceW-x1rl9vs9Efx4JKZRwH-mqskMu8j-t0u4yb99-2UgMQ0I7vkqN89opG-sJTZVE7u-WFUzTPp2NBuR62ASHUjejwRi5ZTHZ4E1_D0MPr0IDGQnwQStm8AEXTD"/>
+<h4 class="font-display-lg text-headline-md font-black text-secondary-fixed-dim">NEXUS DIGITAL</h4>
+<p class="text-on-primary-fixed-variant text-body-md max-w-sm">
+                    Engineering the future through premium digital craftsmanship. Based in the digital cloud, serving clients globally.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8 text-on-primary-fixed-variant">
+<div class="space-y-4">
+<h5 class="text-on-primary font-bold">Services</h5>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Web Apps</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Mobile Development</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">UI Design</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-on-primary font-bold">Company</h5>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Portfolio</a></li>
+<li><a class="hover:text-secondary-fixed-dim transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-white/10 flex flex-col items-center gap-6">
+<div class="flex gap-6 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim">alternate_email</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed-dim">share</span>
+</div>
+<p class="text-on-primary-fixed-variant/50 text-xs text-center">
+                    © 2024 Nexus Digital. Engineering the Future.<br/>
+<a class="underline" href="#">Privacy Policy</a> | <a class="underline" href="#">Terms</a>
+</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Header scroll behavior
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.add('bg-surface');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

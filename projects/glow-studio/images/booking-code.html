@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GLOW STUDIO | Luxury Wellness Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#7c5357",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-fixed": "#c9ebd2",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary-fixed": "#e4e4cc",
+                        "tertiary-fixed-dim": "#adceb6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#304d3b",
+                        "on-primary-fixed-variant": "#623c40",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#eeb9bd",
+                        "tertiary": "#476551",
+                        "on-primary-fixed": "#301216",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2e1",
+                        "on-primary-container": "#6b4448",
+                        "primary-container": "#e8b4b8",
+                        "outline-variant": "#d4c2c3",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "inverse-on-surface": "#f3f0f0",
+                        "surface-container": "#f0eded",
+                        "surface-container-high": "#eae7e7",
+                        "inverse-primary": "#eeb9bd",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed": "#ffdadc",
+                        "surface": "#fcf9f8",
+                        "secondary": "#5e604d",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#a8c9b1",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "background": "#fcf9f8",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary-fixed": "#032111",
+                        "secondary-container": "#e1e1c9",
+                        "on-tertiary-container": "#385542",
+                        "inverse-surface": "#303030",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#504444",
+                        "primary": "#7c5357",
+                        "on-secondary-fixed-variant": "#474836",
+                        "outline": "#827474",
+                        "on-secondary-container": "#636451",
+                        "on-background": "#1b1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .glass-nav { background: rgba(252, 249, 248, 0.9); backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e8b4b8; border-radius: 10px; }
+        .rose-gold-btn { background-color: #e8b4b8; color: #1b1c1c; transition: all 0.3s ease; }
+        .rose-gold-btn:hover { background-color: #d4a3a7; transform: translateY(-1px); }
+        .charcoal-border { border: 1px solid #504444; color: #504444; }
+        .charcoal-border:hover { background-color: #504444; color: #ffffff; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="spa">spa</span>
+<span class="font-headline-md text-headline-md tracking-widest text-primary">GLOW STUDIO</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#calendar">Booking</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#stylists">Stylists</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#location">Location</a>
+</div>
+<button class="rose-gold-btn px-6 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider scale-95 active:scale-90 transition-transform">
+                BOOK NOW
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen pt-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-90 scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCxEZuiFIg0qWhrU2VmOmnVeM0VU3YQxTu7ciwDrN_S3xg2uSATulPvOhrjStbqQCf4r8h-Kb4HSH5ClnjtKt82OCrjkJ4CEKh13vh5APAHok_cxwA_n3AQVWbo1GfBWW1mCvkWJmYCUrAfJ-X9CwJua6MLuprizXHkA40sKh27qPgDhMXC591DaBUitS3SvH8npl8bkvsWjv1w_SA31wQlXkwMec2nUVGVOORzmAj1V1cApcuHB0zzA')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full flex flex-col justify-center min-h-[calc(100vh-6rem)]">
+<div class="max-w-xl space-y-8 fade-in">
+<img alt="Glow Studio Logo" class="w-48 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL62RU0U5BMrhrEtb-xiCLcwdTTGpmh3t0WmUIcsOIZWQnNg_jeQGsOHi2JuCi5nc9hEzr-HNfLSPuXCx-K_VVs718k2vyWaqj819GfJgZL-TF6ynyWmTJnCVIYZzUhiWejYdr0qJcXumMcz5ozxKysDYXbcOCye-_hLSBvqFv1d9Z4MqHYX_IQD7z9bKOCr3BPOCaE3JdQGPoqf2l_ZREkd0oKc89Mg4ptZAgzdmEkwh8-j5FdHXERA"/>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+                    Book Your <span class="italic font-normal">Glow-Up</span> Experience
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Curated beauty rituals in a high-end sanctuary. Where editorial aesthetics meet meticulous self-care.
+                </p>
+<!-- Quick Selector Widget -->
+<div class="bg-surface/95 backdrop-blur-md p-6 rounded-xl shadow-xl space-y-4 border border-outline-variant max-w-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Service</label>
+<select class="w-full bg-transparent border-b border-outline focus:border-primary-container focus:ring-0 font-body-md text-body-md py-2">
+<option>Signature Facial</option>
+<option>Luxury Haircut</option>
+<option>Artisanal Nail Art</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Stylist</label>
+<select class="w-full bg-transparent border-b border-outline focus:border-primary-container focus:ring-0 font-body-md text-body-md py-2">
+<option>Any Available</option>
+<option>Sarah Miller</option>
+</select>
+</div>
+</div>
+<button class="w-full rose-gold-btn py-4 rounded-xl font-label-md text-label-md tracking-widest uppercase">Check Availability</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="services">
+<div class="text-center mb-16 fade-in">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-4">Our Offerings</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Curated Beauty Rituals</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service Card 1 -->
+<div class="group relative fade-in">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-container">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="A cinematic, high-fashion shot of a modern luxury hair salon workspace with minimalist rose gold tools, a marble vanity, and soft studio lighting illuminating a sleek haircut. The atmosphere is warm, editorial, and exclusive, reflecting a premium wellness sanctuary." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYEur2WGOBs45gWJ2u2YrqxoPNJFbYEddP7EbvAyFzYaM8pJ-6QW6QQL0O1qzWd9wqfWw_fbugD23VDZFF1BlAFSqg_9Tb2Pwu3BHMW3y0ojOkcp41QgO7Jkno3o4RtGD3pDt1thyvPi6VVtrNycn9raKWL_eEAl-PUi7tE7AJM2dKcYcFtYw41Lhptx21zhmvMBtUfqrXijobHujnK6MWHXt1XWRYueNlWYpaSB1FHPDn5TDq_mYC4w')"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Luxury Haircut</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Precision cutting and luxury styling.</p>
+</div>
+<span class="font-label-md text-label-md text-primary">$80+</span>
+</div>
+<button class="mt-6 font-label-sm text-label-sm uppercase tracking-widest border-b border-outline-variant hover:border-primary transition-colors pb-1">View Details</button>
+</div>
+<!-- Service Card 2 -->
+<div class="group relative fade-in" style="transition-delay: 100ms">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6">
+<img alt="Signature Facial" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-OPORge4ZvKkphJMgHVIZ2VeRqk-Lv1ECwFPWCpVVRofkCQ7t_XHYWAulRhl3_99cFN8UH4R5tSnGNU6w7j84vnUJYkxzgLaqikJ6EQZccb4wM_JftZF7sxbefKXqeQrsvMb1uAj11fYrizXv5Uhn9vzwXnxn8YS0LNiWAENZzz9wWQPcleOmvMxRqX8d1pVAhd_D9O_O_thbQ59K0IHHvVtBW6agXqREBzPcz-zIaR3uH8COPdKQvw"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Signature Facial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Deep hydration and organic rejuvenation.</p>
+</div>
+<span class="font-label-md text-label-md text-primary">$120+</span>
+</div>
+<button class="mt-6 font-label-sm text-label-sm uppercase tracking-widest border-b border-outline-variant hover:border-primary transition-colors pb-1">View Details</button>
+</div>
+<!-- Service Card 3 -->
+<div class="group relative fade-in" style="transition-delay: 200ms">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6">
+<img alt="Artisanal Nail Art" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYoleiUV3bruAmuJE-HUD9P6re-3g-CRw1daIbg_oG1u9_4XpJ904eUsC3M4oLclccnw0jPsH90atYqEyfr2ZUfo4fk6LmAbjXKoBXfIye59XgNTpnO3lOOSmTo7l44IoAppLqyQa_6-SnH1K3CzORhDOYLhdVSbJjNvh5cIGW2SLeQCJJeQ8JlKwalMXjPajCRyGkCAYW8knBDJZHE6H1r-Gt5jlM3naRGdL2bdOB8a-0n5T_7B4gAQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm">Artisanal Nail Art</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Custom hand-painted bespoke designs.</p>
+</div>
+<span class="font-label-md text-label-md text-primary">$60+</span>
+</div>
+<button class="mt-6 font-label-sm text-label-sm uppercase tracking-widest border-b border-outline-variant hover:border-primary transition-colors pb-1">View Details</button>
+</div>
+</div>
+</section>
+<!-- Calendar & Availability Section -->
+<section class="bg-surface-container-low py-section-gap" id="calendar">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="fade-in">
+<h2 class="font-display-lg-mobile md:font-headline-md text-display-lg-mobile md:text-headline-md mb-8">Secure Your Sanctuary Moment</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Select your preferred date and time. Our system shows real-time availability for our expert stylists.
+                </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+</span>
+<div>
+<p class="font-label-md text-label-md">Instant Confirmation</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Receive WhatsApp alerts immediately.</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="cancel">cancel</span>
+</span>
+<div>
+<p class="font-label-md text-label-md">Flexible Rescheduling</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Up to 24 hours before your appointment.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Calendar Mockup -->
+<div class="bg-surface p-8 rounded-xl shadow-2xl border border-outline-variant fade-in">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-sm text-headline-sm">October 2024</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">M</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">T</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">W</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">T</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">F</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-primary">S</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-primary">S</span>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center">
+<!-- Sample Days -->
+<button class="p-3 text-on-surface-variant hover:bg-surface-container transition-colors rounded-lg">12</button>
+<button class="p-3 text-on-surface-variant hover:bg-surface-container transition-colors rounded-lg">13</button>
+<button class="p-3 bg-primary text-white rounded-lg shadow-lg font-bold">14</button>
+<button class="p-3 text-on-surface hover:bg-surface-container transition-colors rounded-lg">15</button>
+<button class="p-3 text-on-surface hover:bg-surface-container transition-colors rounded-lg">16</button>
+<button class="p-3 text-on-surface hover:bg-surface-container transition-colors rounded-lg">17</button>
+<button class="p-3 text-on-surface hover:bg-surface-container transition-colors rounded-lg">18</button>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-4">Available Slots</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-lg border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md">09:00 AM</button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md">11:30 AM</button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md">02:00 PM</button>
+<button class="px-4 py-2 rounded-lg border border-outline-variant hover:border-primary transition-colors font-label-md text-label-md">04:30 PM</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stylist Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="stylists">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2 fade-in">
+<div class="relative">
+<img alt="Sarah Miller" class="w-full h-auto rounded-xl shadow-2xl relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtJKnmb1mJXAaKZjKyFt4wOSwNAyOWv7STirZUvSabuVuPq9QnizEhnw0Q7XuJsnHlxCOn7C87jHSn3h0E8qECUIi2jP8sDzHqxpXxd4U4mzkSFTxkndBwo26ZQ5thnQraRWrtMFR_huxaE_NBQV4kLsRPGY0wgVXLp4W7luDmrgCgF8Zbaf5faP8G2m7h-zjowWZq765MP7FHojRHRRkD-KVBp5qt_8bg-vb2Ep6XmpK1Wkr2e0ktg"/>
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-container/20 rounded-full blur-3xl z-0"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0"></div>
+</div>
+</div>
+<div class="w-full md:w-1/2 fade-in">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-4">Featured Stylist</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6">Sarah Miller</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed italic">
+                    "My philosophy is rooted in the belief that beauty is an extension of well-being. I specialize in lived-in color and editorial styling that feels effortless yet sophisticated."
+                </p>
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Experience</p>
+<p class="font-body-md text-body-md text-on-surface-variant">12+ Years</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Specialty</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Master Colorist</p>
+</div>
+</div>
+<button class="rose-gold-btn px-10 py-4 rounded-lg font-label-md text-label-md uppercase tracking-wider">Book With Sarah</button>
+</div>
+</div>
+</section>
+<!-- Gallery Bento Grid -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-4">Our Gallery</span>
+<h2 class="font-headline-md text-headline-md">The Glow Aesthetic</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-[600px] md:h-[800px]">
+<div class="col-span-2 row-span-2 overflow-hidden rounded-lg fade-in">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="A high-contrast editorial photography shot of a woman with radiant, dewy skin and perfectly styled minimalist nail art, relaxing in a high-end spa lounge. The lighting is soft and golden, highlighting the warm beige and rose gold interior tones. Professional aesthetic, warm luxury mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6_q0co351JVhvEbpsMmQmuHCgbW9AUzGhCD2sr44SreDNY0T9LgaFg0eOKz2YQXiCNxyeVfplttjk3FS2B_xagDaXRP0RjW-59zAP19Zs6vkwpPE2NLQUeLoNqJKO1QGLN5GpQ1A2_KgMtEfQvgH5ZgeJu4RVU8tR_h_JnIsEn-vuwAQlk6WID7S5aK-GyCOw4PEEVgSeVlIto8CcmYwq7lIPd13KJSRIXD4pqGA9kj8-DIwEvUlAFw')"></div>
+</div>
+<div class="col-span-1 row-span-1 overflow-hidden rounded-lg fade-in" style="transition-delay: 100ms">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="Close-up of luxury skincare products in amber glass bottles arranged on a white marble shelf in a spa environment. Soft daylight from an unseen window creates gentle shadows. High-end, clean, and organic wellness vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8zLi0HbpUd3DQu-91i8YnZtRRMy0RAHz8_UTMCTWY5XNuZfih8NcrCQDw9lIjSKNQ6fl8Z2s_zObHKHkKcJukJMoDq2AQrPL1SJm2wMOE3GQrFrlUX3k7NhmiBasHQhtdEw6tJ9ZYo38cPH-W-HQRiTlHGP6NYpfo7u89o8frwJC6Zocnf5UjBO4LWJ98FyRtWTjJkBlVGj9m6G3Lu3PqzmB59e4sw5_Di86pcWLyKaxBrTKaC5bkbQ')"></div>
+</div>
+<div class="col-span-1 row-span-2 overflow-hidden rounded-lg fade-in" style="transition-delay: 200ms">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="Vertical shot of a minimalist salon interior featuring an arched doorway, soft beige walls, and rose gold pendant lights. A single lush green plant sits in a textured ceramic pot. Elegant, serene, architectural sanctuary aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5ludXZFDQy_i0YpPTaoHNrokD0UXRmZvjoFsDMsPkz-ekp7BYa2FqZDXOWxJZRAw5dnV7WyEB-l03IaTrFY5jujUTGOcSPHtlUipY7kwbzpTe7eAcbshmI8GXkUsOW_Rbh3rNXckN0Jc6gZdVLL4P8tYfSY3fuMI2d3CKNfaGQHFFxkFxx6f5JW0nGapRnXaBxTdW3H5lbmPRfmUaMBhzQroe1ulKyfK37IX19PMNqjUAlzxcJwbA6g')"></div>
+</div>
+<div class="col-span-1 row-span-1 overflow-hidden rounded-lg fade-in" style="transition-delay: 300ms">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="Close-up artistic shot of hands during a luxury manicure, focusing on the intricate application of delicate rose gold foil on nude-toned nails. The background is a soft-focus spa interior. Precision and artisanal craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5QQctRYdXQH8xDW1mvsXa2DIvtOk5CB3haf1OoGbKl4Vi4_q09HqxaBE5DE4uYuioZlNeGngAN3P9VToet-xlZOlh1A8nNwlI9d1RfvTzAdEEFeN4NxLcJgBlYB1fjPyvqljXOLc87_yrpOV9Lj0rKFGoezfQT4MV9Dsz_qOqA31AXWIxPEQxSytNUqqu1QwaBwLIiJLeOJHLF6nTOv4lVjQQu2QGQb9CCCMPyovvhkfF90lJRmi39Q')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="md:w-1/3 fade-in">
+<h2 class="font-display-lg-mobile md:font-headline-md text-display-lg-mobile md:text-headline-md mb-6">What Our Clients Say</h2>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-primary" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">4.9/5 stars based on 1,200+ Google Reviews.</p>
+</div>
+<div class="md:w-2/3 flex gap-6 overflow-x-auto pb-8 custom-scrollbar">
+<!-- Review Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] bg-surface-container-low p-8 rounded-xl border border-outline-variant fade-in">
+<p class="font-body-lg text-body-lg italic mb-6">"The atmosphere alone is worth the visit. Sarah is a true artist with color—I've never felt more like myself. Absolutely world-class."</p>
+<div>
+<p class="font-label-md text-label-md">Elena Rodriguez</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Client since 2021</p>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="min-w-[320px] md:min-w-[400px] bg-surface-container-low p-8 rounded-xl border border-outline-variant fade-in" style="transition-delay: 100ms">
+<p class="font-body-lg text-body-lg italic mb-6">"Finally found a sanctuary in the city. The signature facial was transformative. My skin has never looked so vibrant and clear."</p>
+<div>
+<p class="font-label-md text-label-md">Marcus Thorne</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Loyalty Member</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact Section -->
+<section class="py-section-gap bg-surface" id="location">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-stretch">
+<div class="space-y-12 fade-in">
+<div>
+<h2 class="font-headline-md text-headline-md mb-8">Visit The Studio</h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">123 Serenity Avenue, Suite 400<br/>Beverly Hills, CA 90210</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="schedule">schedule</span>
+<div class="font-body-lg text-body-lg text-on-surface-variant">
+<p>Mon - Fri: 9:00 AM - 8:00 PM</p>
+<p>Sat - Sun: 10:00 AM - 6:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="phone_iphone">phone_iphone</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">+1 (555) 123-4567</p>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="rose-gold-btn px-8 py-4 rounded-lg font-label-md text-label-md flex items-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="chat">chat</span> WhatsApp Us
+                    </button>
+<button class="charcoal-border px-8 py-4 rounded-lg font-label-md text-label-md flex items-center gap-2 uppercase tracking-widest transition-all">
+                        Get Directions
+                    </button>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-xl min-h-[400px] bg-surface-container fade-in">
+<img class="w-full h-full object-cover grayscale-[0.5] contrast-125" data-alt="A clean, minimalist vector map of Beverly Hills area with custom markers for Glow Studio. The map uses a soft beige and charcoal color palette to match the studio's branding. Stylized architectural icons represent nearby landmarks in a luxury fashion illustration style." data-location="Beverly Hills, CA" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoBjwyLfaSa30lsbU1xtJzknB7r5dQgfQq_rJdpQRhzAnweFMVrIUWJ9rE2dZj3W12jeBGUY3qxMPycscCPvfqatcm-j1SEplkihsVYOUd9ze2bdCmucUZDzCsbfVrgxZGjcB2ppw31CHkwR9hDrFMNBRguNbwL-wBXMlD0xjfLbypibQwAKArbUDwN_b2jtqKZXCsJ3In2aI6tXjb2yOYtkCjNYgOG5Bx_WFSUIFmDcAdzrbbSS4ng"/>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<span class="font-headline-sm text-headline-sm text-primary tracking-widest">GLOW STUDIO</span>
+<p class="font-body-md text-body-md text-on-surface-variant">A curated wellness sanctuary for the modern individual.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Explore</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#stylists">Stylists</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Experience</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Loyalty Program</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gift Cards</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bridal Packages</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Newsletter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Join our inner circle for exclusive seasonal rituals.</p>
+<div class="flex flex-col gap-3">
+<input class="bg-transparent border-b border-outline focus:border-primary focus:ring-0 py-2 font-body-md text-body-md" placeholder="Email address" type="email"/>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-primary text-left">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 GLOW STUDIO. ALL RIGHTS RESERVED.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">DESIGNED FOR EXCELLENCE</p>
+</div>
+</footer>
+<!-- Interactive FAB for mobile booking -->
+<div class="fixed bottom-6 right-6 md:hidden z-50">
+<button class="rose-gold-btn w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-transform active:scale-90">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</button>
+</div>
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
