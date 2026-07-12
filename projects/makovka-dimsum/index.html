@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Makovka Dimsum - Dimsum terlengkap di Kota Cilegon dengan 8 varian rasa yang nagih! Semua berhak makan dimsum.">
+    <meta name="keywords" content="dimsum, cilegon, kuliner, makovka, dimsum murah, makanan cilegon">
+    <meta property="og:title" content="Makovka Dimsum - Semua Berhak Makan Dimsum">
+    <meta property="og:description" content="Dimsum terlengkap di Kota Cilegon dengan 8 varian rasa yang nagih!">
+    <meta property="og:image" content="images/hero-dimsum.jpg">
+    <meta property="og:type" content="website">
+    <title>Makovka Dimsum - Semua Berhak Makan Dimsum</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800;900&family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #bb1200;
+            --primary-hover: #a01000;
+            --on-primary: #ffffff;
+            --background: #f9f9f9;
+            --on-background: #1a1c1c;
+            --surface: #f9f9f9;
+            --on-surface: #1a1c1c;
+            --on-surface-variant: #5d3f3a;
+            --secondary: #5e5e5e;
+            --border: #1a1c1c;
+            --surface-container: #eeeeee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background: var(--background);
+            color: var(--on-background);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Anybody', sans-serif; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--surface);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            z-index: 50;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-family: 'Anybody', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 12px;
+            transition: all 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-link:hover { color: var(--primary); background: #e8e8e8; }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--on-primary);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 8px 24px;
+            border: 2px solid var(--border);
+            border-bottom-width: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover { transform: translateY(2px); border-bottom-width: 1px; }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--on-background);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            z-index: 49;
+            padding: 16px;
+        }
+
+        .mobile-menu.active { display: flex; flex-direction: column; gap: 8px; }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 16px;
+            color: var(--on-background);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .mobile-menu a:hover { color: var(--primary); }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .nav-container { padding: 0 64px; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding-top: 100px;
+            padding-bottom: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-content {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            z-index: 10;
+            padding: 0 16px;
+        }
+
+        .hero-logo {
+            height: 96px;
+            object-fit: contain;
+            margin-bottom: 8px;
+            filter: drop-shadow(2px 2px 0 rgba(0,0,0,1));
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            line-height: 1.1;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero-desc {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--on-surface-variant);
+            max-width: 400px;
+            border-left: 4px solid var(--primary);
+            padding-left: 16px;
+        }
+
+        .hero-cta {
+            background: var(--primary);
+            color: var(--on-primary);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 16px 32px;
+            border: 2px solid var(--border);
+            border-bottom-width: 4px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+
+        .hero-image {
+            order: 1;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .hero-image-shadow {
+            position: absolute;
+            inset: 16px;
+            background: var(--primary);
+            transform: translate(16px, 16px);
+            border: 2px solid var(--border);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border: 2px solid var(--border);
+            overflow: hidden;
+            background: var(--surface);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .hero-image-wrapper:hover img { transform: scale(1.05); }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -8px;
+            left: 8px;
+            background: var(--surface);
+            border: 2px solid var(--border);
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transform: rotate(-5deg);
+            z-index: 20;
+        }
+
+        .hero-badge-icon { color: var(--primary); font-size: 24px; }
+        .hero-badge-text { font-weight: 700; font-size: 14px; text-transform: uppercase; }
+
+        @media (min-width: 768px) {
+            .hero { padding-top: 120px; }
+            .hero-grid { grid-template-columns: 1fr 1fr; }
+            .hero-content { order: 1; padding: 0 64px; }
+            .hero-image { order: 2; padding: 0 64px; }
+            .hero-image-shadow { inset: 64px; }
+            .hero-badge { bottom: 0px; left: 40px; }
+            .hero h1 { font-size: 48px; letter-spacing: -0.02em; }
+            .hero-logo { height: 128px; }
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-title {
+            font-family: 'Anybody', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            border-bottom: 4px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            padding: 48px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .menu-card {
+            border: 2px solid var(--border);
+            background: var(--surface);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .menu-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-card:hover { transform: translateY(-4px); }
+
+        .menu-card-image {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .menu-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .menu-card:hover .menu-card-image img { transform: scale(1.1); }
+
+        .menu-card-content { padding: 12px; }
+
+        .menu-card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            margin-bottom: 6px;
+        }
+
+        .menu-card h3 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .menu-card p {
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        .menu-card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-card-price {
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 15px;
+        }
+
+        .menu-card-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .menu-card-btn:hover { opacity: 0.8; }
+
+        @media (min-width: 768px) {
+            .menu { padding: 48px 64px; }
+            .menu-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+            .menu-card-content { padding: 16px; }
+            .menu-card h3 { font-size: 14px; }
+            .menu-card p { font-size: 16px; }
+            .menu-card-price { font-size: 16px; }
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 48px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .testi-card {
+            border: 2px solid var(--border);
+            background: var(--surface);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .testi-card:hover { transform: translateY(-4px); }
+
+        .testi-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .testi-body {
+            padding: 20px;
+        }
+
+        .testi-quote {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--on-surface-variant);
+            margin-bottom: 12px;
+        }
+
+        .testi-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .testi-role {
+            font-size: 12px;
+            color: var(--secondary);
+        }
+
+        .testi-btn {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--border);
+            border-bottom-width: 3px;
+            padding: 8px 16px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+            transition: all 0.2s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .testi-btn:hover {
+            box-shadow: none;
+            transform: translate(2px, 2px);
+        }
+
+        @media (min-width: 768px) {
+            .testimonials { padding: 48px 64px; }
+            .testi-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        }
+
+        /* ===== LOCATION / INFO SECTION ===== */
+        .location {
+            padding: 48px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .location-card {
+            background: var(--primary);
+            color: white;
+            padding: 28px 24px;
+            border: 2px solid var(--border);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transition: transform 0.3s;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .location-card:hover { transform: translateY(-2px); }
+
+        .location-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .location-info h3 {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .location-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .location-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .location { padding: 48px 64px; }
+            .location-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .location-card { padding: 36px 28px; }
+            .location-info h3 { font-size: 18px; }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            border-top: 4px solid var(--primary);
+            background: var(--on-background);
+            color: var(--primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            padding: 48px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-family: 'Anybody', sans-serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--surface);
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer-copy {
+            color: #e2e2e2;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+
+        .footer-section-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--surface);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .footer-link {
+            color: #e2e2e2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover { color: #ffb4a7; }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-form label {
+            color: #e2e2e2;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: -6px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: #2f3131;
+            border: 2px solid #5e5e5e;
+            color: white;
+            padding: 10px 14px;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea { resize: vertical; min-height: 80px; }
+
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            align-self: flex-start;
+            border-bottom: 3px solid #8a0d00;
+        }
+
+        .contact-form button:hover { opacity: 0.85; }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 2fr;
+                padding: 48px 64px;
+            }
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            background: #25D366;
+            color: white;
+            padding: 16px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .wa-float:hover { transform: translateY(-4px); }
+        .wa-float .material-symbols-outlined { font-size: 28px; }
+
+        /* ===== ANIMATIONS ===== */
+        html { scroll-behavior: smooth; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Makovka Dimsum</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#testimonials" class="nav-link">Testimoni</a>
+                <a href="#location" class="nav-link">Lokasi</a>
+                <a href="https://wa.me/62XXXXXXXXXXX" class="nav-cta" target="_blank">Pesan</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('active')">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#" onclick="this.parentElement.classList.remove('active')">Home</a>
+        <a href="#menu" onclick="this.parentElement.classList.remove('active')">Menu</a>
+        <a href="#testimonials" onclick="this.parentElement.classList.remove('active')">Testimoni</a>
+        <a href="#location" onclick="this.parentElement.classList.remove('active')">Lokasi</a>
+        <a href="https://wa.me/62XXXXXXXXXXX" onclick="this.parentElement.classList.remove('active')">Pesan Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <img src="images/logo.png" alt="Makovka Dimsum Logo" class="hero-logo">
+                <h1>Semua Berhak <span>Makan Dimsum</span></h1>
+                <p class="hero-desc">Dimsum terlengkap di Kota Cilegon dengan 8 varian rasa yang nagih!</p>
+                <a href="https://wa.me/62XXXXXXXXXXX" class="hero-cta" target="_blank">Pesan Sekarang</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-shadow"></div>
+                <div class="hero-image-wrapper">
+                    <img src="images/hero-dimsum.jpg" alt="Delicious Dimsum Assortment">
+                </div>
+                <div class="hero-badge">
+                    <span class="material-symbols-outlined hero-badge-icon" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+                    <span class="hero-badge-text">Best in Cilegon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <h2 class="section-title reveal">Daftar Menu Favorit Kami</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/creamy-truffle.webp" alt="Creamy Truffle"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Premium</span>
+                    <h3>Creamy Truffle</h3>
+                    <p>Aroma truffle mewah.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Creamy%20Truffle" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/mentai.webp" alt="Mentai"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Best Seller</span>
+                    <h3>Mentai</h3>
+                    <p>Saus mentai creamy.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Mentai" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/cheese-mayo.webp" alt="Cheese Mayo"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Cheese</span>
+                    <h3>Cheese Mayo</h3>
+                    <p>Keju lumer melimpah.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Cheese%20Mayo" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/garlic-mayo.webp" alt="Garlic Mayo"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Original</span>
+                    <h3>Garlic Mayo</h3>
+                    <p>Gurih bawang putih.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Garlic%20Mayo" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/nashville-fire.webp" alt="Nashville Fire"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Spicy</span>
+                    <h3>Nashville Fire</h3>
+                    <p>Pedas nendang!</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Nashville%20Fire" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/creamy-bolognese.webp" alt="Creamy Bolognese"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Premium</span>
+                    <h3>Creamy Bolognese</h3>
+                    <p>Rasa Italia otentik.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Creamy%20Bolognese" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/hot-mentai.webp" alt="Hot Mentai"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Spicy</span>
+                    <h3>Hot Mentai</h3>
+                    <p>Mentai pedas spesial.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Hot%20Mentai" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image"><img src="images/nashville-fire-cheese.webp" alt="Nashville Fire Cheese"></div>
+                <div class="menu-card-content">
+                    <span class="menu-card-tag">Spicy</span>
+                    <h3>Nashville Fire Cheese</h3>
+                    <p>Pedas keju sempurna.</p>
+                    <div class="menu-card-bottom">
+                        <span class="menu-card-price">Rp 15.000</span>
+                        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Nashville%20Fire%20Cheese" class="menu-card-btn" target="_blank">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title reveal">Tinjauan Kami</h2>
+        <div class="testi-grid">
+            <div class="testi-card reveal">
+                <div class="testi-header">"Sangat recommended!"</div>
+                <div class="testi-body">
+                    <p class="testi-quote">Dimsum-nya enak banget! Tekstur lembut, rasa creamy truffle-nya berasa mahal. Harga Rp 15.000 doang, worth it banget!</p>
+                    <span class="testi-name">Budi Santoso</span>
+                    <span class="testi-role">Pelanggan Setia</span><br>
+                    <a href="https://wa.me/62XXXXXXXXXXX" class="testi-btn" target="_blank">Order Sekarang</a>
+                </div>
+            </div>
+
+            <div class="testi-card reveal">
+                <div class="testi-header">"Enak dan murah!"</div>
+                <div class="testi-body">
+                    <p class="testi-quote">Pertama kali coba langsung ketagihan. Nashville Fire-nya pedasnya pas, ga bikin sakit perut. Packaging-nya juga rapi!</p>
+                    <span class="testi-name">Rina Pratiwi</span>
+                    <span class="testi-role">Food Blogger</span><br>
+                    <a href="https://wa.me/62XXXXXXXXXXX" class="testi-btn" target="_blank">Order Sekarang</a>
+                </div>
+            </div>
+
+            <div class="testi-card reveal">
+                <div class="testi-header">"Suka sekali!"</div>
+                <div class="testi-body">
+                    <p class="testi-quote">Buat camilan keluarga favorit banget. Anak-anak suka cheese mayo, aku suka hot mentai. Jadi langganan tiap minggu!</p>
+                    <span class="testi-name">Dewi Kartika</span>
+                    <span class="testi-role">Ibu Rumah Tangga</span><br>
+                    <a href="https://wa.me/62XXXXXXXXXXX" class="testi-btn" target="_blank">Order Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location / Info -->
+    <section class="location" id="location">
+        <h2 class="section-title reveal">Kami Berada di Lokasi</h2>
+        <div class="location-grid">
+            <div class="location-card reveal">
+                <span class="material-symbols-outlined location-icon">location_on</span>
+                <div class="location-info">
+                    <h3>Alamat Kami</h3>
+                    <p>Kota Cilegon, Banten<br>Dekat pusat kota, mudah dijangkau dari semua arah!</p>
+                </div>
+            </div>
+
+            <div class="location-card reveal">
+                <span class="material-symbols-outlined location-icon">call</span>
+                <div class="location-info">
+                    <h3>Hubungi Kami</h3>
+                    <p>WhatsApp: <a href="https://wa.me/62XXXXXXXXXXX">+62 XXX-XXXX-XXXX</a><br>
+                    Instagram: <a href="#">@makovkacilegon</a></p>
+                </div>
+            </div>
+
+            <div class="location-card reveal">
+                <span class="material-symbols-outlined location-icon">schedule</span>
+                <div class="location-info">
+                    <h3>Jam Operasional</h3>
+                    <p>Senin - Minggu<br>10.00 - 22.00 WIB<br><strong>Buka setiap hari!</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <span class="footer-brand">Makovka</span>
+                <p class="footer-copy">© 2024 Makovka Dimsum.<br>Semua berhak makan dimsum.</p>
+            </div>
+            <div class="footer-links">
+                <span class="footer-section-title">Navigasi</span>
+                <a href="#" class="footer-link">Home</a>
+                <a href="#menu" class="footer-link">Menu</a>
+                <a href="#testimonials" class="footer-link">Testimoni</a>
+                <a href="#location" class="footer-link">Lokasi</a>
+            </div>
+            <div>
+                <span class="footer-section-title">Kontak Kami</span>
+                <form class="contact-form" onsubmit="event.preventDefault(); window.open('https://wa.me/62XXXXXXXXXXX?text=' + encodeURIComponent('Nama: ' + this.elements[0].value + '%0AEmail: ' + this.elements[1].value + '%0APesan: ' + this.elements[2].value), '_blank');">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" placeholder="Nama kamu" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="email@contoh.com">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" placeholder="Tulis pesan kamu..." rows="3"></textarea>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/62XXXXXXXXXXX" class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+        <span class="material-symbols-outlined">chat</span>
+    </a>
+
+    <script>
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                        entry.target.classList.add('revealed');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal, .menu-card').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            const menu = document.querySelector('.mobile-menu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            if (menu.classList.contains('active') && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 10) {
+                nav.style.boxShadow = '2px 2px 0px 0px rgba(0,0,0,0.5)';
+            } else {
+                nav.style.boxShadow = '4px 4px 0px 0px rgba(0,0,0,1)';
+            }
+        });
+    </script>
+</body>
+</html>
