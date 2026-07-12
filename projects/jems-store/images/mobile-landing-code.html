@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jems Store - Premium App Artifacts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0eded",
+                        "tertiary": "#5d5f5f",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#c6c6c7",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#5d5f5f",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-container": "#747676",
+                        "primary": "#5d5f5f",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#747676",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed-variant": "#454747",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-container": "#fd8b00",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "background": "#fcf9f8",
+                        "on-surface-variant": "#444748",
+                        "on-background": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "surface": "#fcf9f8",
+                        "on-secondary-container": "#603100",
+                        "secondary": "#904d00",
+                        "outline-variant": "#c4c7c8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#ffffff",
+                        "outline": "#747878",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-bright": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "20px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation (Mobile Optimized) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-2">
+<img alt="Jems Store Logo" class="h-8 w-8 rounded-DEFAULT object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvJG1ycV_64T3z4bFC0AEX57yPZT_1lR-5C_zI8adi90J6-uUJSfZwCFryIcF9OZzmO8_Ap2tytCWW7lUQljKjd5za4EdpzatmM7zxGNpo2iCB39PTM-xgtzZGBHs_3tx3n325GTgrQNcm6lKYeaQalj2obi4ZSk0_xVCrQCmX878of_-9QY7whiqqHZbJUqhH2PMX6F8r4BLOi8l81kNv_XGe4GhBu3_xVlS8p_fTFrf-NYBXlIVpR-bA"/>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">AppArtifacts</span>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Open menu" class="md:hidden p-2 text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Desktop Nav (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-body-md text-body-md transition-colors duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-200 px-3 py-2 rounded-lg font-body-md text-body-md" href="#">Categories</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-200 px-3 py-2 rounded-lg font-body-md text-body-md" href="#">Featured</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-200 px-3 py-2 rounded-lg font-body-md text-body-md" href="#">Developers</a>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-section-gap">
+<!-- Mobile Hero Section -->
+<section class="flex flex-col gap-6 md:flex-row items-center text-center md:text-left pt-8">
+<div class="flex flex-col gap-4 max-w-2xl md:w-1/2">
+<span class="text-secondary font-label-bold text-label-bold uppercase tracking-wider">Curated Artifacts</span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">Discover Premium Mobile Experiences</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Elevate your device with meticulously crafted applications designed for professional aesthetics and seamless performance.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-4">
+<button class="bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-label-bold text-label-bold px-8 py-4 rounded-full transition-colors shadow-sm w-full sm:w-auto">
+                        Explore Collection
+                    </button>
+<button class="bg-surface text-on-surface border border-outline-variant hover:bg-surface-container-low font-label-bold text-label-bold px-8 py-4 rounded-full transition-colors w-full sm:w-auto">
+                        View Categories
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
+<img alt="App Mockup Visualization" class="w-full max-w-md object-cover rounded-xl shadow-lg" data-alt="A striking 3D isometric mockup of multiple smartphones floating gracefully above a modern silver laptop. The screens display sleek, vibrant orange UI designs in a premium light-mode aesthetic, set against a pristine, soft white backdrop. The lighting is studio-quality, casting subtle ambient shadows that emphasize depth and digital elegance, perfectly capturing a high-end software marketplace presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4wKFRJMxHQ63ZkBkaVnLM5Kn1OGOspHINQOhAOiR8VvkSUvfQN0tHZT3-wl2q8_1CSHqkMdeDQUE0UbiNvpxxHFv_KKXiKuh4hfMLZP7gWxGu6q1073UMnDFNwe3LVCbVCLl2AGDQCbHxljgm_qhllp_BSI8-oq9SBVOZaaKjFewQs9a3HRYgSvzC7cz1H_4aFSaVRsWFtYyyOejX-aCwt9_7Y_6JSckgRVLr5BGHDDGWUkblSnlr"/>
+</div>
+</section>
+<!-- Categories Scroller -->
+<section class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-on-surface">Top Categories</h2>
+<a class="text-secondary font-label-bold text-label-bold hover:underline" href="#">View All</a>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 snap-x no-scrollbar">
+<button class="snap-start flex-none px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full font-label-bold text-label-bold shadow-sm whitespace-nowrap">Productivity</button>
+<button class="snap-start flex-none px-6 py-2 bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-low rounded-full font-label-bold text-label-bold transition-colors whitespace-nowrap">Finance</button>
+<button class="snap-start flex-none px-6 py-2 bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-low rounded-full font-label-bold text-label-bold transition-colors whitespace-nowrap">Lifestyle</button>
+<button class="snap-start flex-none px-6 py-2 bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-low rounded-full font-label-bold text-label-bold transition-colors whitespace-nowrap">Health</button>
+<button class="snap-start flex-none px-6 py-2 bg-surface border border-outline-variant text-on-surface hover:bg-surface-container-low rounded-full font-label-bold text-label-bold transition-colors whitespace-nowrap">Entertainment</button>
+</div>
+</section>
+<!-- App Grid (Bento/Card Layout) -->
+<section class="flex flex-col gap-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Trending Artifacts</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Netflix Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<img alt="Netflix App Icon" class="w-16 h-16 rounded-lg object-cover shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBecxfa09KzV2ThBJ1Qqxn4wqbDZurLTRLJJ1kZOGYL8i5N7qbvQ5rQEAlisLx0rTbPOxB2qaC-JrJ2ozW8mN28EZZwAfKWjhDsp8s3eznmhAW_wsRkeioCoKaRXw67Ee-RUnt140dlk0on5KUysJJzhFurpy6GtEnw6FjPkchPhK7XU4o1t5-9uFYSqgihU3UnF1079CVDgWdmkmmngeagm2pP2Tt8pxqpJHwdrEbo8SE9ACNk2IEU"/>
+<div class="flex flex-col gap-1 flex-grow">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-label-bold text-label-bold text-on-surface">Netflix</h3>
+<a class="bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-caption text-caption px-3 py-1.5 rounded-full transition-colors whitespace-nowrap" href="https://wa.me/">Pesan via WhatsApp</a>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">186.000 IDR</p>
+<div class="flex items-center gap-1 mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-caption text-caption">4.9</span>
+</div>
+</div>
+</div>
+<!-- Spotify Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<img alt="Spotify App Icon" class="w-16 h-16 rounded-lg object-cover shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABwI3aw9fK0gAlvUo8QSHs99IRLPZEyMPBp_kTYKWYcG8o9HtH37IWdzqTArQIEED0KnFjFeMwYyoUr_KnHiIoRjr-OaseBCY33IB4PA2-5I5LlLT78v38V74eZscSbHv3r9GEOUAIZlRBKAhH7NC8vFDOL9WY9pfc5H5bWlJgeg698ipYUyLAINSTLCk9Uq3UrBEOYjc6F0iVFc3RePpu1k3lbpIc3A0Eh4OCum-2fQ5JLimLk1bC"/>
+<div class="flex flex-col gap-1 flex-grow">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-label-bold text-label-bold text-on-surface">Spotify</h3>
+<a class="bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-caption text-caption px-3 py-1.5 rounded-full transition-colors whitespace-nowrap" href="https://wa.me/">Pesan via WhatsApp</a>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">54.990 IDR</p>
+<div class="flex items-center gap-1 mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-caption text-caption">4.8</span>
+</div>
+</div>
+</div>
+<!-- YouTube Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-4 flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+<img alt="YouTube App Icon" class="w-16 h-16 rounded-lg object-cover shadow-sm flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjCrBlBu5QLka5QDq7d7gY-S9BvJWRhfebyIX7Ve-v6FZIGhgAOR4jLW4v3yna8E4uJ0TBxjlVfhbBIeWXCt07RyNIm-X0_mFVDQORi-WgUfOKbxcGv3EiRkptlOKDVrpIDgsP6JPoxUzrYD8mp3rVIocHfW4ibHjSWqfyuZuj63ltrclK8Zs7MyqblFdDM9dY22KtudWJne03nvxmGzqtNR94XbnX9yZLRbFe6UlRXQaLV33wU2dA"/>
+<div class="flex flex-col gap-1 flex-grow">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-label-bold text-label-bold text-on-surface">YouTube</h3>
+<a class="bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-on-secondary font-caption text-caption px-3 py-1.5 rounded-full transition-colors whitespace-nowrap" href="https://wa.me/">Pesan via WhatsApp</a>
+</div>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-2">59.000 IDR</p>
+<div class="flex items-center gap-1 mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">star</span>
+<span class="font-caption text-caption">4.7</span>
+</div>
+</div>
+</div></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter border-t border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">AppArtifacts</span>
+<p class="font-caption text-caption text-on-surface-variant">© 2024 AppArtifacts. Curated Excellence in Software.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Support</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Contact Us</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Careers</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-primary hover:underline decoration-secondary underline-offset-4 transition-colors" href="#">Press Kit</a>
+</nav>
+</footer>
+<style>
+        /* Utility for hiding scrollbar in category scroller but keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>
