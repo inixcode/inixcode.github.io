@@ -64,13 +64,26 @@
         }
 
         .nav-logo {
-            font-family: 'Anybody', sans-serif;
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
             text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+
+        .nav-logo:hover .nav-logo-img {
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .nav-logo-img {
+                height: 48px;
+            }
         }
 
         .nav-links {
@@ -683,7 +696,9 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Makovka Dimsum</a>
+            <a href="#" class="nav-logo">
+                <img src="images/logo.png" alt="Makovka Dimsum" class="nav-logo-img">
+            </a>
             <div class="nav-links">
                 <a href="#" class="nav-link">Home</a>
                 <a href="#menu" class="nav-link">Menu</a>
