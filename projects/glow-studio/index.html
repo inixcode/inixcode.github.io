@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Glow Studio - Luxury Wellness Sanctuary. Booking salon premium dengan layanan facial, haircut, dan nail art.">
+<meta property="og:title" content="Glow Studio - Luxury Wellness Sanctuary">
+<meta property="og:description" content="Book your glow-up experience. Premium salon services.">
+<meta property="og:image" content="images/hero-interior.jpg">
+<link rel="icon" type="image/png" href="images/logo.png">
+<title>Glow Studio | Luxury Wellness Sanctuary</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#474836",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "outline": "#827474",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-container": "#e1e1c9",
+                    "inverse-on-surface": "#f3f0f0",
+                    "surface-dim": "#dcd9d9",
+                    "on-secondary-fixed": "#1b1d0e",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "surface-tint": "#7c5357",
+                    "on-primary-fixed": "#301216",
+                    "surface-bright": "#fcf9f8",
+                    "inverse-primary": "#eeb9bd",
+                    "secondary-fixed": "#e4e4cc",
+                    "on-primary-container": "#6b4448",
+                    "on-secondary-container": "#636451",
+                    "primary": "#7c5357",
+                    "on-tertiary-fixed-variant": "#304d3b",
+                    "on-surface-variant": "#504444",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#d4c2c3",
+                    "surface-variant": "#e4e2e1",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "primary-fixed-dim": "#eeb9bd",
+                    "on-background": "#1b1c1c",
+                    "secondary": "#5e604d",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#623c40",
+                    "background": "#fcf9f8",
+                    "on-tertiary-container": "#385542",
+                    "on-tertiary-fixed": "#032111",
+                    "tertiary-fixed": "#c9ebd2",
+                    "tertiary-fixed-dim": "#adceb6",
+                    "tertiary": "#476551",
+                    "surface-container-highest": "#e4e2e1",
+                    "primary-fixed": "#ffdadc",
+                    "on-surface": "#1b1c1c",
+                    "tertiary-container": "#a8c9b1",
+                    "primary-container": "#e8b4b8",
+                    "secondary-fixed-dim": "#c8c8b0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background-color: rgba(252, 249, 248, 0.9);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .nav-scrolled {
+            box-shadow: 0px 20px 40px rgba(45, 45, 45, 0.05);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .rose-gold-underline::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: #7c5357;
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+        .rose-gold-underline:hover::after {
+            width: 100%;
+        }
+        .custom-calendar-day:hover {
+            background-color: #ffdadc;
+        }
+        .active-day {
+            background-color: #7c5357 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 glass-nav" id="top-nav">
+<div class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">GLOW STUDIO</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors rose-gold-underline" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors rose-gold-underline" href="#stylists">Stylists</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors rose-gold-underline" href="#gallery">Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors rose-gold-underline" href="#reviews">Reviews</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors rose-gold-underline" href="#contact">Contact</a>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all scale-95 hover:scale-100 duration-200 uppercase tracking-widest ml-4">Book Now</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center px-margin-desktop pt-20">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide panoramic landscape of a luxury minimalist hair salon with high-end furniture, warm beige walls, and architectural rose gold lighting. The atmosphere is serene and expensive, capturing the essence of a premium sanctuary with soft focus and professional editorial lighting." style="background-image: url('images/hero-interior.jpg')"></div>
+<div class="absolute inset-0 bg-white/20"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl fade-in">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Book Your <br/><span class="italic font-normal">Glow-Up</span> Experience</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 max-w-md">Indulge in a curated sanctuary where luxury meets artistry. Elevate your natural radiance with our bespoke wellness treatments.</p>
+</div>
+<!-- Floating Booking Widget -->
+<div class="bg-surface p-10 rounded-xl shadow-sm border border-outline-variant/30 w-full max-w-md fade-in" style="animation-delay: 0.2s;">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Reserve a Moment</h3>
+<div class="space-y-6">
+<div class="relative">
+<label class="block font-label-sm text-label-sm uppercase text-on-surface-variant mb-2">Service Category</label>
+<select class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-3 px-0 font-body-md text-body-md">
+<option>Signature Facial</option>
+<option>Luxury Haircut</option>
+<option>Artisanal Nail Art</option>
+</select>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm uppercase text-on-surface-variant mb-2">Preferred Stylist</label>
+<select class="w-full bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-3 px-0 font-body-md text-body-md">
+<option>Sarah Miller</option>
+<option>James Chen</option>
+<option>Elena Rossi</option>
+</select>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all duration-300 mt-4 uppercase tracking-widest shadow-lg">Check Availability</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-[0.2em] block mb-4">Our Expertise</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Curated Treatments</h2>
+</div>
+<p class="max-w-xs text-on-surface-variant text-right hidden md:block">Each service is meticulously designed to provide a transformative experience of rejuvenation and beauty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Haircut -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a high-end salon experience showing hair being expertly styled. Focus on soft textures and refined details with warm ambient lighting consistent with a luxury rose gold and beige aesthetic." src="images/service-haircut.jpg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Luxury Haircut</h3>
+<span class="font-label-sm text-label-sm uppercase text-primary">$120+</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-sm">A bespoke cutting experience including a deep conditioning treatment and signature blow-out.</p>
+<button class="font-label-md text-label-md text-primary border-b border-primary/20 hover:border-primary pb-1 transition-all uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+<!-- Card 2: Facial -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Signature Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="images/service-facial.jpg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Signature Facial</h3>
+<span class="font-label-sm text-label-sm uppercase text-primary">$185+</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-sm">Targeted rejuvenation using professional-grade botanicals and advanced facial massage techniques.</p>
+<button class="font-label-md text-label-md text-primary border-b border-primary/20 hover:border-primary pb-1 transition-all uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+<!-- Card 3: Nails -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Artisanal Nail Art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="images/service-nails.jpg"/>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Artisanal Nail Art</h3>
+<span class="font-label-sm text-label-sm uppercase text-primary">$95+</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-sm">Minimalist elegance for your hands. Precision shaping and bespoke, hand-painted designs.</p>
+<button class="font-label-md text-label-md text-primary border-b border-primary/20 hover:border-primary pb-1 transition-all uppercase tracking-widest">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Calendar Section -->
+<section class="py-section-gap px-margin-desktop overflow-hidden">
+<div class="max-w-container-max mx-auto flex flex-col lg:flex-row gap-20 items-center">
+<div class="w-full lg:w-1/3">
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-[0.2em] block mb-4">Availability</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Secure Your Sanctuary Moment</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8">Select your preferred date and time. Our system real-time synchronizes with our specialists to ensure your preferred slot.</p>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Instant Confirmation</span>
+</div>
+</div>
+<div class="w-full lg:w-2/3 bg-surface p-8 md:p-12 rounded-xl shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline-sm text-headline-sm">November 2024</h4>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4 mb-8">
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">MON</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">TUE</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">WED</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">THU</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">FRI</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">SAT</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant opacity-50">SUN</div>
+<!-- Placeholder days -->
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all opacity-20">28</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all opacity-20">29</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all opacity-20">30</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all opacity-20">31</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">01</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">02</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">03</button>
+<!-- Row 2 -->
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">04</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">05</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">06</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">07</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all active-day">08</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">09</button>
+<button class="h-14 flex items-center justify-center rounded-lg custom-calendar-day transition-all">10</button>
+</div>
+<div class="pt-8 border-t border-outline-variant/30">
+<h5 class="font-label-md text-label-md mb-6 uppercase tracking-widest text-primary">Available Slots</h5>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-2 border border-outline-variant rounded-full text-sm hover:border-primary hover:text-primary transition-all">09:00 AM</button>
+<button class="px-6 py-2 border border-outline-variant rounded-full text-sm hover:border-primary hover:text-primary transition-all bg-primary/5 border-primary text-primary">10:30 AM</button>
+<button class="px-6 py-2 border border-outline-variant rounded-full text-sm hover:border-primary hover:text-primary transition-all">01:00 PM</button>
+<button class="px-6 py-2 border border-outline-variant rounded-full text-sm hover:border-primary hover:text-primary transition-all">03:30 PM</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stylist Feature -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low overflow-hidden" id="stylists">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-20">
+<div class="w-full md:w-1/2 relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-xl z-10 relative">
+<img alt="Sarah Miller" class="w-full h-full object-cover" src="images/stylist-sarah.jpg"/>
+</div>
+<div class="absolute -top-10 -left-10 w-40 h-40 border border-primary/20 rounded-full -z-0"></div>
+<div class="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/5 rounded-full -z-0"></div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-[0.2em] block mb-4">Our Creative Director</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Meet Sarah Miller</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-8 italic">"Beauty is not just about the outcome, but the quiet confidence you feel when you leave the chair."</p>
+<p class="text-body-md text-on-surface-variant mb-10">With over 15 years of editorial experience in New York and Paris, Sarah brings a refined eye for structural cutting and tonal color that enhances individual features.</p>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<div class="font-headline-sm text-primary mb-1">15+</div>
+<div class="font-label-sm text-label-sm uppercase opacity-50">Years Experience</div>
+</div>
+<div>
+<div class="font-headline-sm text-primary mb-1">4.9/5</div>
+<div class="font-label-sm text-label-sm uppercase opacity-50">Client Rating</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all uppercase tracking-[0.2em]">View Portfolio</button>
+</div>
+</div>
+</section>
+<!-- Aesthetic Gallery Bento -->
+<section class="py-section-gap px-margin-desktop" id="gallery">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-[0.2em] block mb-4">Visual Harmony</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Studio Aesthetic</h2>
+</div>
+<div class="grid grid-cols-12 grid-rows-2 gap-gutter h-[800px]">
+<div class="col-span-8 row-span-2 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A wide bento grid main feature image showing the sun-drenched architectural interior of the Glow Studio salon. Clean lines, marble surfaces, rose gold accents, and lush green fiddle leaf figs against a warm beige background." src="images/gallery-main.jpg"/>
+<div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="text-white font-label-md uppercase tracking-[0.3em]">Interiors</span>
+</div>
+</div>
+<div class="col-span-4 row-span-1 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Close up detail of a luxury spa treatment room with soft white towels, a stone oil diffuser, and high-end glass bottles of serum. Mood is tranquil and refined." src="images/gallery-detail1.jpg"/>
+</div>
+<div class="col-span-4 row-span-1 relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Macro shot of a minimalist rose gold logo engraved on a marble reception desk. Soft lighting creates gentle highlights and shadows." src="images/gallery-detail2.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials & Location -->
+<section class="py-section-gap px-margin-desktop bg-surface-container-low" id="reviews">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+<!-- Testimonials -->
+<div>
+<span class="font-label-sm text-label-sm uppercase text-primary tracking-[0.2em] block mb-4">Client Voices</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-12">Exceptional Experiences</h2>
+<div class="space-y-12">
+<div class="border-l-2 border-primary/20 pl-8 pb-4">
+<div class="flex gap-1 mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface italic mb-4">"The most tranquil salon experience I've had in years. Sarah truly listens and has an incredible eye for detail. My hair has never felt healthier."</p>
+<div class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">— Julianne W., Beverly Hills</div>
+</div>
+<div class="border-l-2 border-primary/20 pl-8 pb-4">
+<div class="flex gap-1 mb-4 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface italic mb-4">"The signature facial is a revelation. I left glowing and feeling completely reset. A true sanctuary in the middle of the city."</p>
+<div class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">— Marcus L., Designer</div>
+</div>
+</div>
+</div>
+<!-- Location/Map -->
+<div id="contact">
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm border border-outline-variant/30">
+<div class="h-80 bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center grayscale contrast-75 brightness-110" data-location="Beverly Hills, California" style="background-image: url('images/map.jpg')"></div>
+<div class="absolute inset-0 bg-primary/5"></div>
+<!-- Custom Map Pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg animate-bounce">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="bg-white px-4 py-1 rounded-full text-xs font-label-md shadow-md mt-2">Glow Studio</div>
+</div>
+</div>
+<div class="p-10">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-primary mb-4 tracking-widest">Visit Us</h4>
+<p class="text-on-surface-variant">455 North Rodeo Drive<br/>Beverly Hills, CA 90210</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-primary mb-4 tracking-widest">Contact</h4>
+<p class="text-on-surface-variant">hello@glowstudio.com<br/>+1 (310) 555-0129</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/30">
+<h4 class="font-label-sm text-label-sm uppercase text-primary mb-4 tracking-widest">Hours</h4>
+<div class="grid grid-cols-2 text-sm text-on-surface-variant">
+<div>Mon - Fri</div>
+<div class="text-right">09:00 AM - 08:00 PM</div>
+<div>Sat - Sun</div>
+<div class="text-right">10:00 AM - 06:00 PM</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-section-gap px-margin-desktop border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-start gap-16 mb-20">
+<div class="max-w-sm">
+<div class="font-headline-sm text-headline-sm text-primary mb-6">GLOW STUDIO</div>
+<p class="text-on-surface-variant mb-8">Join our curated list for exclusive seasonal treatments, wellness tips, and studio news.</p>
+<form class="flex gap-2">
+<input class="bg-transparent border-0 border-b border-outline focus:ring-0 focus:border-primary py-3 flex-grow font-body-md text-body-md" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all uppercase tracking-widest">Join</button>
+</form>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-[0.2em]">The Studio</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Stylists</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-[0.2em]">Services</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Hair Design</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Skincare</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Artisanal Nails</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bridal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-[0.2em]">Social</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pinterest</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">TikTok</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter pt-12 border-t border-outline-variant/30 text-on-surface-variant font-body-md text-sm opacity-80">
+<p>© 2024 Glow Studio. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary transition-colors underline" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors underline" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+                nav.style.paddingTop = '1rem';
+                nav.style.paddingBottom = '1rem';
+            } else {
+                nav.classList.remove('nav-scrolled');
+                nav.style.paddingTop = '1.5rem';
+                nav.style.paddingBottom = '1.5rem';
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
